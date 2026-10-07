@@ -1,1 +1,1047 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CIBUS LORE — The Story Behind What We Eat</title>
+
+  <link rel="icon" type="image/png" href="cibus-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #063d28;
+      --green2: #0b5937;
+      --light-green: #6eb44f;
+      --cream: #f8f5ed;
+      --gold: #b77920;
+      --text: #17382b;
+      --muted: #68736d;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* HEADER */
+
+    header {
+      height: 88px;
+      background: white;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      gap: 35px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 285px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      margin-left: auto;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #35443d;
+      position: relative;
+      padding: 34px 0;
+    }
+
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 34px;
+      background: var(--green);
+      left: 50%;
+      bottom: 23px;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-left: 5px;
+    }
+
+    .search {
+      width: 280px;
+      height: 43px;
+      border: 1px solid #e2e2dc;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      color: #777;
+      background: #fafaf7;
+    }
+
+    .search span {
+      margin-right: 10px;
+      font-size: 19px;
+    }
+
+    .search input {
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      font-size: 13px;
+    }
+
+    .user {
+      font-size: 23px;
+      color: var(--green);
+    }
+
+    .community-btn {
+      border: none;
+      background: var(--green);
+      color: white;
+      padding: 14px 23px;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 375px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.68), rgba(0,0,0,.25), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      width: 90%;
+      max-width: 1450px;
+      margin: auto;
+      padding: 47px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      letter-spacing: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 13px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 5vw, 76px);
+      line-height: .98;
+      max-width: 650px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #83c968;
+    }
+
+    .hero-description {
+      font-size: 19px;
+      line-height: 1.45;
+      max-width: 570px;
+      margin-bottom: 22px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .explore-btn {
+      border: none;
+      background: #65b64b;
+      color: white;
+      padding: 16px 27px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .watch {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+    }
+
+    .play {
+      width: 48px;
+      height: 48px;
+      border: 2px solid white;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    .watch small {
+      display: block;
+      opacity: .75;
+      font-weight: 400;
+      margin-top: 3px;
+    }
+
+    .hero-writing {
+      position: absolute;
+      right: 4%;
+      top: 55px;
+      text-align: right;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 27px;
+      line-height: 1.2;
+      z-index: 2;
+    }
+
+    .hero-writing div:last-child {
+      margin-top: 55px;
+      font-size: 19px;
+      max-width: 180px;
+    }
+
+    /* CATEGORY BAR */
+
+    .category-wrapper {
+      width: 95%;
+      max-width: 1420px;
+      margin: -25px auto 0;
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 2.8fr 1.2fr;
+      gap: 18px;
+    }
+
+    .categories {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.09);
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      padding: 16px 10px;
+    }
+
+    .category {
+      border-right: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .category:last-child {
+      border-right: none;
+    }
+
+    .category-icon {
+      font-size: 31px;
+      margin-bottom: 8px;
+    }
+
+    .category span {
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .good-food {
+      border-radius: 20px;
+      background:
+        linear-gradient(90deg, rgba(5,57,36,.85), rgba(5,57,36,.35)),
+        url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.1);
+    }
+
+    .good-food-content {
+      text-align: center;
+    }
+
+    .good-food h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      line-height: 1.1;
+    }
+
+    .arrow-circle {
+      margin: 12px auto 0;
+      width: 34px;
+      height: 34px;
+      background: #62ae4b;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    /* MAIN */
+
+    main {
+      width: 95%;
+      max-width: 1420px;
+      margin: 22px auto 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 13px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    .view-all {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2.8fr 1.2fr;
+      gap: 18px;
+    }
+
+    .featured {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .story-card {
+      background: white;
+      border-radius: 15px;
+      padding: 8px;
+      display: grid;
+      grid-template-columns: 42% 58%;
+      min-height: 190px;
+      box-shadow: 0 3px 13px rgba(0,0,0,.05);
+    }
+
+    .story-card img {
+      width: 100%;
+      height: 174px;
+      border-radius: 11px;
+      object-fit: cover;
+    }
+
+    .story-info {
+      padding: 7px 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tag {
+      display: inline-block;
+      align-self: flex-start;
+      background: #edf4e9;
+      color: #568542;
+      border-radius: 12px;
+      padding: 4px 9px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 9px;
+    }
+
+    .story-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .story-info p {
+      font-size: 11px;
+      color: #68716d;
+      line-height: 1.4;
+    }
+
+    .story-bottom {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #777;
+    }
+
+    .story-arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f4f4ed;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      color: var(--green);
+    }
+
+    /* AIM */
+
+    .aim {
+      background: white;
+      border-radius: 16px;
+      padding: 27px 27px 22px;
+      position: relative;
+      box-shadow: 0 3px 13px rgba(0,0,0,.04);
+    }
+
+    .aim small {
+      letter-spacing: 3px;
+      font-size: 10px;
+      color: #89918b;
+    }
+
+    .aim h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      line-height: 1.08;
+      margin: 12px 0;
+    }
+
+    .aim p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #65706a;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 28px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: var(--green);
+    }
+
+    .stat span {
+      font-size: 10px;
+      color: #737a75;
+    }
+
+    /* QUOTE */
+
+    .journey {
+      margin-top: 18px;
+      background: #f2eee4;
+      display: grid;
+      grid-template-columns: 1.4fr 1.5fr .9fr;
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 125px;
+    }
+
+    .quote {
+      padding: 25px 35px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .quote span {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .journey-items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: white;
+    }
+
+    .journey-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-right: 1px solid #eee;
+      font-size: 12px;
+      font-weight: 600;
+      gap: 7px;
+    }
+
+    .journey-icon {
+      font-size: 27px;
+    }
+
+    .join-card {
+      background: var(--green);
+      color: white;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .join-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 16px;
+    }
+
+    .join-card p {
+      font-size: 11px;
+      line-height: 1.4;
+      opacity: .85;
+    }
+
+    .join-small {
+      align-self: flex-end;
+      border: none;
+      background: #63ad4a;
+      color: white;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: white;
+      margin-top: 0;
+      padding: 25px 4% 15px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 2fr 1fr;
+      align-items: center;
+      gap: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .footer-logo {
+      width: 210px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: flex-end;
+      gap: 17px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      font-size: 11px;
+      color: #777;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1100px) {
+      header {
+        gap: 18px;
+      }
+
+      .logo {
+        width: 220px;
+      }
+
+      .nav {
+        gap: 17px;
+      }
+
+      .search {
+        width: 210px;
+      }
+
+      .category-wrapper,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .story-card {
+        min-height: 160px;
+      }
+
+      .journey {
+        grid-template-columns: 1fr;
+      }
+
+      .join-card {
+        min-height: 150px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      header {
+        height: auto;
+        padding: 15px 5%;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        width: 190px;
+      }
+
+      .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        overflow-x: auto;
+      }
+
+      .nav a {
+        padding: 10px 0;
+        white-space: nowrap;
+      }
+
+      .nav a.active::after {
+        bottom: 0;
+      }
+
+      .header-right {
+        margin-left: auto;
+      }
+
+      .community-btn {
+        display: none;
+      }
+
+      .search {
+        width: 170px;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .hero-content {
+        padding-top: 45px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero-writing {
+        display: none;
+      }
+
+      .categories {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .category:nth-child(4) {
+        border-right: none;
+      }
+
+      .category:nth-child(n+5) {
+        border-top: 1px solid #eee;
+      }
+
+      .journey-items {
+        min-height: 120px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-logo {
+        margin: auto;
+      }
+
+      .footer-links,
+      .socials {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .header-right {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .user {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category:nth-child(odd) {
+        border-right: 1px solid #eee;
+      }
+
+      .category:nth-child(even) {
+        border-right: none;
+      }
+
+      .story-card {
+        grid-template-columns: 40% 60%;
+      }
+
+      .journey-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .journey-item:nth-child(3),
+      .journey-item:nth-child(4) {
+        border-top: 1px solid #eee;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <a href="#" class="brand">
+      <img src="cibus-logo.png" alt="CIBUS LORE" class="logo">
+    </a>
+
+    <nav class="nav">
+      <a href="#" class="active">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#articles">Articles</a>
+      <a href="#stories">Food Stories</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="header-right">
+
+      <div class="search">
+        <span>⌕</span>
+        <input type="text" placeholder="Search foods, stories, places...">
+      </div>
+
+      <div class="user">♟</div>
+
+      <button class="community-btn">
+        Join Our Community
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        GOOD FOOD &nbsp; BRIGHTER LIVES
+      </div>
+
+      <h1>
+        Every Food<br>
+        Has a <span>Story.</span>
+      </h1>
+
+      <p class="hero-description">
+        From farms to your table — explore the people,
+        places and journeys behind what we eat.
+      </p>
+
+      <div class="hero-buttons">
+
+        <button class="explore-btn">
+          Start Exploring &nbsp; →
+        </button>
+
+        <div class="watch">
+          <div class="play">▶</div>
+          <div>
+            Watch Our Story
+            <small>1 min</small>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hero-writing">
+      <div>People</div>
+      <div>Plants</div>
+      <div>Places</div>
+      <div>Food</div>
+      <div>Stories</div>
+
+      <div>
+        A healthier<br>
+        brighter tomorrow
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- CATEGORIES -->
+  <section class="category-wrapper" id="categories">
+
+    <div class="categories">
+
+      <div class="category">
+        <div class="category-icon">🍎</div>
+        <span>Fruits</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🌰</div>
+        <span>Nuts &<br>Dry Fruits</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🍃</div>
+        <span>Seeds</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🌿</div>
+        <span>Vegetables</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🌾</div>
+        <span>Grains</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🍯</div>
+        <span>Natural Foods</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">☕</div>
+        <span>Beverages</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🌍</div>
+        <span>Food Around<br>the World</span>
+      </div>
+
+    </div>
+
+    <div class="good-food">
+
+      <div class="good-food-content">
+        <h2>
+          Good Food<br>
+          Brighter Lives
+        </h2>
+
+        <div class="arrow-circle">→</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- FEATURED -->
+    <section id="articles">
+
+      <div class="section-heading">
+        <h2>Featured Stories</h2>
+        <a href="#" class="view-all">View All →</a>
+      </div>
+
+      <div class="content-grid">
+
+        <div class="featured">
+
+          <!-- APPLE -->
+          <article class="story-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=600&q=85"
+              alt="Apples"
+            >
+
+            <div class="story-info">
+
+              <span class="tag">FRUITS</span>
+
+              <h3>
+                The Journey of an Apple
+              </h3>
+
+              <p>
+                From orchard to your plate — a story
+                of care, climate and community.
+              </p>
+
+              <div class="story-bottom">
+                <span>▣ Sep 18, 2026</span>
+                <span class="story-arrow">→</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- ALMOND -->
+          <article class="story-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=85"
+              alt="Almonds"
+            >
+
+            <div class="story-info">
+
+              <span class="tag">NUTS</span>
+
+              <h3>
+                Almonds: Small Seeds, Big Benefits
+              </h3>
+
+              <p>
+                A global journey from ancient trade
+                to modern superfood.
+              </p>
+
+              <div class="story-bottom">
+                <span>▣ Sep 15, 2026</span>
+                <span class="story-arrow">→</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- LAND -->
+          <article class="story-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=85"
+              alt="Agricultural land"
+            >
+
+            <div class="story-info">
+
+              <span class="tag">PLACES</span>
+
+              <h3>
+                The Land That Feeds Us
+              </h3>
+
+              <p>
+                Exploring the regions, people and
+                cultures behind our food.
+              </p>
+
+              <div class="story-bottom">
+                <span>▣ Sep 12, 2026</span>
+                <span class="story-arrow">→
