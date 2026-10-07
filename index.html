@@ -1,505 +1,424 @@
----
-const categories = [
-  { icon: "🍎", name: "Fruits" },
-  { icon: "🌰", name: "Nuts & Dry Fruits" },
-  { icon: "🌱", name: "Seeds" },
-  { icon: "🥬", name: "Vegetables" },
-  { icon: "🌾", name: "Grains" },
-  { icon: "🍯", name: "Natural Foods" },
-  { icon: "☕", name: "Beverages" },
-  { icon: "🌍", name: "Food Around the World" },
-];
-
-const stories = [
-  {
-    image: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=85",
-    tag: "FRUITS",
-    title: "The Journey of an Apple",
-    text: "From orchard to your plate — a story of care, climate and community.",
-    date: "Sep 18, 2026",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1508061253366-f7da158b6d3a?auto=format&fit=crop&w=800&q=85",
-    tag: "NUTS",
-    title: "Almonds: Small Seeds, Big Benefits",
-    text: "A global journey from ancient trade to modern superfood.",
-    date: "Sep 15, 2026",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85",
-    tag: "PLACES",
-    title: "The Land That Feeds Us",
-    text: "Exploring the regions, people and cultures behind food.",
-    date: "Sep 12, 2026",
-  },
-];
----
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CIBUS LORE — The Story Behind What We Eat</title>
-    <meta
-      name="description"
-      content="CIBUS LORE explores the people, plants, places and stories behind what we eat."
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
+  <title>CIBUS LORE — The Story Behind What We Eat</title>
 
-    <!-- ================= HEADER ================= -->
+  <meta
+    name="description"
+    content="CIBUS LORE explores the people, plants, places and stories behind what we eat."
+  />
 
-    <header class="header">
-      <div class="nav-container">
+  <!-- CIBUS LORE FAVICON -->
+  <link rel="icon" type="image/png" href="/cibus-logo.png" />
+</head>
 
-        <a href="/" class="brand">
-          <div class="brand-logo">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <path
-                d="M56 106C42 91 31 74 32 56C33 36 47 19 66 12"
-                fill="none"
-                stroke="#075b32"
-                stroke-width="8"
-                stroke-linecap="round"
-              />
-              <path
-                d="M62 27C72 14 88 10 101 11C99 27 88 40 69 42"
-                fill="#4f9b36"
-              />
-              <path
-                d="M46 40C35 29 23 28 13 31C17 44 28 52 43 51"
-                fill="#176d35"
-              />
-              <path
-                d="M35 76C52 66 72 64 98 71C92 83 78 92 61 94"
-                fill="#64a83b"
-              />
-              <path
-                d="M37 89C55 76 76 76 97 85"
-                fill="none"
-                stroke="#075b32"
-                stroke-width="7"
-              />
-              <path
-                d="M43 100C61 88 79 90 96 98"
-                fill="none"
-                stroke="#075b32"
-                stroke-width="7"
-              />
-              <circle cx="65" cy="68" r="13" fill="#c18422" />
-            </svg>
-          </div>
+<body>
 
-          <div class="brand-text">
-            <strong><span>CIBUS</span> LORE</strong>
-            <small>THE STORY BEHIND WHAT WE EAT</small>
-          </div>
-        </a>
+  <!-- ================= HEADER ================= -->
 
-        <nav class="nav">
-          <a href="/" class="active">Home</a>
-          <a href="#categories">Categories</a>
-          <a href="#stories">Articles</a>
-          <a href="#stories">Food Stories</a>
-          <a href="#about">About</a>
-        </nav>
+  <header class="header">
+    <div class="nav-container">
 
-        <div class="nav-right">
+      <a href="/" class="brand">
+        <img src="/cibus-logo.png" alt="CIBUS LORE" />
+      </a>
 
-          <div class="search">
-            <span>⌕</span>
-            <input
-              type="text"
-              placeholder="Search foods, stories, places..."
-            />
-          </div>
+      <nav class="nav">
+        <a href="/" class="active">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#stories">Articles</a>
+        <a href="#stories">Food Stories</a>
+        <a href="#about">About</a>
+      </nav>
 
-          <button class="user">♟</button>
+      <div class="search">
+        <span>⌕</span>
+        <input
+          type="text"
+          placeholder="Search foods, stories, places..."
+        />
+      </div>
 
-          <button class="community">
-            Join Our Community
-          </button>
+    </div>
+  </header>
 
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-background"></div>
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          GOOD FOOD &nbsp;&nbsp; BRIGHTER LIVES
         </div>
 
-        <button class="menu">☰</button>
+        <h1>
+          Every Food<br />
+          Has a <em>Story.</em>
+        </h1>
+
+        <p>
+          From farms to your table — explore the people,<br />
+          places and journeys behind what we eat.
+        </p>
+
+        <a href="#stories" class="primary-btn">
+          Start Exploring <span>→</span>
+        </a>
 
       </div>
-    </header>
 
+      <div class="hero-side">
+        <span>People</span>
+        <span>Plants</span>
+        <span>Places</span>
+        <span>Food</span>
+        <span>Stories</span>
+      </div>
 
-    <!-- ================= HERO ================= -->
+    </section>
 
-    <main>
 
-      <section class="hero">
+    <!-- ================= CATEGORIES ================= -->
 
-        <div class="hero-background"></div>
+    <section class="category-wrap" id="categories">
 
-        <div class="hero-content">
+      <div class="categories">
 
-          <div class="eyebrow">
-            GOOD FOOD&nbsp;&nbsp; BRIGHTER LIVES
-          </div>
-
-          <h1>
-            Every Food<br />
-            Has a <em>Story.</em>
-          </h1>
-
-          <p>
-            From farms to your table — explore the people,<br />
-            places and journeys behind what we eat.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a href="#stories" class="primary-btn">
-              Start Exploring
-              <span>→</span>
-            </a>
-
-            <button class="watch">
-              <span class="play">▶</span>
-              <span>
-                <strong>Watch Our Story</strong>
-                <small>1 min</small>
-              </span>
-            </button>
-
-          </div>
-
-        </div>
-
-        <div class="hero-side">
-          <span>People</span>
-          <span>Plants</span>
-          <span>Places</span>
-          <span>Food</span>
-          <span>Stories</span>
-        </div>
-
-        <div class="hero-signature">
-          A healthier<br />
-          <strong>brighter tomorrow</strong>
-        </div>
-
-      </section>
-
-
-      <!-- ================= CATEGORY BAR ================= -->
-
-      <section class="category-wrap" id="categories">
-
-        <div class="categories">
-
-          {categories.map((category) => (
-            <a href="#" class="category">
-              <div class="category-icon">{category.icon}</div>
-              <span>{category.name}</span>
-            </a>
-          ))}
-
-        </div>
-
-        <div class="category-banner">
-          <div class="leaf">🌿</div>
-          <div>
-            <strong>Good Food</strong>
-            <strong>Brighter Lives</strong>
-          </div>
-          <span>→</span>
-        </div>
-
-      </section>
-
-
-      <!-- ================= FEATURED STORIES ================= -->
-
-      <section class="content-section" id="stories">
-
-        <div class="section-heading">
-          <h2>Featured Stories</h2>
-          <a href="#">View All&nbsp; →</a>
-        </div>
-
-        <div class="stories-layout">
-
-          <div class="story-grid">
-
-            {stories.map((story) => (
-              <article class="story-card">
-
-                <img src={story.image} alt={story.title} />
-
-                <div class="story-content">
-
-                  <span class="tag">{story.tag}</span>
-
-                  <h3>{story.title}</h3>
-
-                  <p>{story.text}</p>
-
-                  <div class="story-bottom">
-                    <small>▣ &nbsp;{story.date}</small>
-                    <span class="arrow">→</span>
-                  </div>
-
-                </div>
-
-              </article>
-            ))}
-
-          </div>
-
-
-          <!-- AIM CARD -->
-
-          <aside class="aim-card">
-
-            <div class="aim-leaf">🌿</div>
-
-            <small>OUR AIM</small>
-
-            <h2>
-              A Healthier<br />
-              Planet Through<br />
-              Better Food
-            </h2>
-
-            <p>
-              We tell the real stories behind food —
-              for a healthier you and a brighter planet.
-            </p>
-
-            <div class="stats">
-
-              <div>
-                <strong>1000+</strong>
-                <span>Articles</span>
-              </div>
-
-              <div>
-                <strong>50+</strong>
-                <span>Countries</span>
-              </div>
-
-              <div>
-                <strong>1</strong>
-                <span>Mission</span>
-              </div>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-      </section>
-
-
-      <!-- ================= QUOTE ================= -->
-
-      <section class="quote-section">
-
-        <div class="quote">
-          <span class="quote-mark">“</span>
-
-          <div>
-            <p>
-              Food is not just what we eat,<br />
-              but a story of people, nature and time.
-            </p>
-
-            <small>— CIBUS LORE</small>
-          </div>
-        </div>
-
-
-        <div class="journey-links">
-
-          <a href="#">
-            <span>🌿</span>
-            <strong>Learn<br />The Facts</strong>
-          </a>
-
-          <a href="#">
-            <span>♧</span>
-            <strong>Meet<br />The People</strong>
-          </a>
-
-          <a href="#">
-            <span>◎</span>
-            <strong>Explore<br />The Places</strong>
-          </a>
-
-          <a href="#">
-            <span>♡</span>
-            <strong>Appreciate<br />The Journey</strong>
-          </a>
-
-        </div>
-
-
-        <div class="join-card">
-
-          <div>
-            <span>🌿</span>
-          </div>
-
-          <div>
-            <small>Join a global community</small>
-            <strong>that cares about food,<br />people and the planet.</strong>
-          </div>
-
-          <button>
-            Be a Part of It →
-          </button>
-
-        </div>
-
-      </section>
-
-
-      <!-- ================= ABOUT ================= -->
-
-      <section class="about" id="about">
-
-        <div class="about-inner">
-
-          <div>
-            <span class="about-label">THE CIBUS LORE MISSION</span>
-
-            <h2>
-              Every ingredient<br />
-              has a journey.
-            </h2>
-          </div>
-
-          <p>
-            CIBUS LORE is a place to discover the stories behind
-            the food we see every day — where it comes from, who
-            grows it, how it travels and why it matters.
-          </p>
-
-        </div>
-
-      </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-      <div class="footer-top">
-
-        <a href="/" class="footer-brand">
-
-          <div class="footer-logo">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <path
-                d="M56 106C42 91 31 74 32 56C33 36 47 19 66 12"
-                fill="none"
-                stroke="#075b32"
-                stroke-width="8"
-                stroke-linecap="round"
-              />
-              <path
-                d="M62 27C72 14 88 10 101 11C99 27 88 40 69 42"
-                fill="#4f9b36"
-              />
-              <path
-                d="M46 40C35 29 23 28 13 31C17 44 28 52 43 51"
-                fill="#176d35"
-              />
-              <path
-                d="M35 76C52 66 72 64 98 71C92 83 78 92 61 94"
-                fill="#64a83b"
-              />
-              <circle cx="65" cy="68" r="13" fill="#c18422" />
-            </svg>
-          </div>
-
-          <div>
-            <strong><span>CIBUS</span> LORE</strong>
-            <small>THE STORY BEHIND WHAT WE EAT</small>
-          </div>
-
+        <a href="#" class="category">
+          <div>🍎</div>
+          <span>Fruits</span>
         </a>
 
+        <a href="#" class="category">
+          <div>🌰</div>
+          <span>Nuts & Dry Fruits</span>
+        </a>
 
-        <div class="footer-links">
+        <a href="#" class="category">
+          <div>🌱</div>
+          <span>Seeds</span>
+        </a>
 
-          <a href="/">Home</a>
-          <a href="#categories">Categories</a>
-          <a href="#stories">Articles</a>
-          <a href="#about">About</a>
-          <a href="#">Contact</a>
+        <a href="#" class="category">
+          <div>🥬</div>
+          <span>Vegetables</span>
+        </a>
 
-        </div>
+        <a href="#" class="category">
+          <div>🌾</div>
+          <span>Grains</span>
+        </a>
 
+        <a href="#" class="category">
+          <div>🍯</div>
+          <span>Natural Foods</span>
+        </a>
 
-        <div class="socials">
-          <a href="#">◎</a>
-          <a href="#">▶</a>
-          <a href="#">𝕏</a>
-          <a href="#">ℙ</a>
-          <a href="#">in</a>
-        </div>
+        <a href="#" class="category">
+          <div>☕</div>
+          <span>Beverages</span>
+        </a>
 
+        <a href="#" class="category">
+          <div>🌍</div>
+          <span>Food Around the World</span>
+        </a>
 
-        <div class="footer-message">
-          Good Food<br />
+      </div>
+
+      <div class="category-banner">
+        <div class="leaf">🌿</div>
+
+        <div>
+          <strong>Good Food</strong>
           <strong>Brighter Lives</strong>
         </div>
 
+        <span>→</span>
       </div>
 
+    </section>
 
-      <div class="footer-bottom">
 
-        <span>© 2026 CIBUS LORE. All rights reserved.</span>
+    <!-- ================= STORIES ================= -->
+
+    <section class="content-section" id="stories">
+
+      <div class="section-heading">
+        <h2>Featured Stories</h2>
+        <a href="#">View All →</a>
+      </div>
+
+      <div class="stories-layout">
+
+        <div class="story-grid">
+
+          <article class="story-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=85"
+              alt="Apple"
+            />
+
+            <div class="story-content">
+              <span class="tag">FRUITS</span>
+
+              <h3>The Journey of an Apple</h3>
+
+              <p>
+                From orchard to your plate — a story of care,
+                climate and community.
+              </p>
+
+              <div class="story-bottom">
+                <small>▣ &nbsp; Sep 18, 2026</small>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+
+          </article>
+
+
+          <article class="story-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1508061253366-f7da158b6d3a?auto=format&fit=crop&w=800&q=85"
+              alt="Almonds"
+            />
+
+            <div class="story-content">
+              <span class="tag">NUTS</span>
+
+              <h3>Almonds: Small Seeds, Big Benefits</h3>
+
+              <p>
+                A global journey from ancient trade to modern
+                superfood.
+              </p>
+
+              <div class="story-bottom">
+                <small>▣ &nbsp; Sep 15, 2026</small>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+
+          </article>
+
+
+          <article class="story-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85"
+              alt="Farm"
+            />
+
+            <div class="story-content">
+              <span class="tag">PLACES</span>
+
+              <h3>The Land That Feeds Us</h3>
+
+              <p>
+                Exploring the regions, people and cultures
+                behind food.
+              </p>
+
+              <div class="story-bottom">
+                <small>▣ &nbsp; Sep 12, 2026</small>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- AIM CARD -->
+
+        <aside class="aim-card">
+
+          <div class="aim-leaf">🌿</div>
+
+          <small>OUR AIM</small>
+
+          <h2>
+            A Healthier<br />
+            Planet Through<br />
+            Better Food
+          </h2>
+
+          <p>
+            We tell the real stories behind food —
+            for a healthier you and a brighter planet.
+          </p>
+
+          <div class="stats">
+
+            <div>
+              <strong>1000+</strong>
+              <span>Articles</span>
+            </div>
+
+            <div>
+              <strong>50+</strong>
+              <span>Countries</span>
+            </div>
+
+            <div>
+              <strong>1</strong>
+              <span>Mission</span>
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= QUOTE ================= -->
+
+    <section class="quote-section">
+
+      <div class="quote">
+
+        <span class="quote-mark">“</span>
 
         <div>
-          People&nbsp;&nbsp; • &nbsp;&nbsp;Plants&nbsp;&nbsp; •
-          &nbsp;&nbsp;Places&nbsp;&nbsp; • &nbsp;&nbsp;Food&nbsp;&nbsp; •
-          &nbsp;&nbsp;Stories
+          <p>
+            Food is not just what we eat,<br />
+            but a story of people, nature and time.
+          </p>
+
+          <small>— CIBUS LORE</small>
         </div>
 
       </div>
 
-    </footer>
+
+      <div class="journey-links">
+
+        <a href="#">
+          <span>🌿</span>
+          <strong>Learn<br />The Facts</strong>
+        </a>
+
+        <a href="#">
+          <span>♧</span>
+          <strong>Meet<br />The People</strong>
+        </a>
+
+        <a href="#">
+          <span>◎</span>
+          <strong>Explore<br />The Places</strong>
+        </a>
+
+        <a href="#">
+          <span>♡</span>
+          <strong>Appreciate<br />The Journey</strong>
+        </a>
+
+      </div>
+
+    </section>
 
 
-  </body>
-</html>
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+      <div class="about-inner">
+
+        <div>
+          <span class="about-label">
+            THE CIBUS LORE MISSION
+          </span>
+
+          <h2>
+            Every ingredient<br />
+            has a journey.
+          </h2>
+        </div>
+
+        <p>
+          CIBUS LORE is a place to discover the stories behind
+          the food we see every day — where it comes from, who
+          grows it, how it travels and why it matters.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <a href="/" class="footer-brand">
+        <img src="/cibus-logo.png" alt="CIBUS LORE" />
+      </a>
+
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#stories">Articles</a>
+        <a href="#about">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="footer-message">
+        Good Food<br />
+        <strong>Brighter Lives</strong>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 CIBUS LORE. All rights reserved.
+      </span>
+
+      <span>
+        People • Plants • Places • Food • Stories
+      </span>
+
+    </div>
+
+  </footer>
 
 
 <style>
 
-  /* =========================
-     GLOBAL
-  ========================= */
-
-  :global(*) {
+  * {
     box-sizing: border-box;
   }
 
-  :global(html) {
+  html {
     scroll-behavior: smooth;
   }
 
-  :global(body) {
+  body {
     margin: 0;
     background: #f8f6ee;
     color: #153b29;
-    font-family:
-      Arial,
-      Helvetica,
-      sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   a {
@@ -513,9 +432,7 @@ const stories = [
   }
 
 
-  /* =========================
-     HEADER
-  ========================= */
+  /* HEADER */
 
   .header {
     position: relative;
@@ -526,57 +443,31 @@ const stories = [
 
   .nav-container {
     max-width: 1440px;
-    margin: auto;
     height: 88px;
-    padding: 0 48px;
+    margin: auto;
+    padding: 0 45px;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 35px;
   }
 
   .brand {
+    width: 280px;
+    min-width: 280px;
     display: flex;
     align-items: center;
-    min-width: 310px;
   }
 
-  .brand-logo {
-    width: 70px;
-    height: 70px;
-  }
-
-  .brand-logo svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .brand-text strong,
-  .footer-brand strong {
+  .brand img {
+    width: 250px;
+    height: auto;
     display: block;
-    font-family: Georgia, serif;
-    font-size: 27px;
-    letter-spacing: 1px;
-    color: #ad7121;
-  }
-
-  .brand-text strong span,
-  .footer-brand strong span {
-    color: #064d2b;
-  }
-
-  .brand-text small,
-  .footer-brand small {
-    display: block;
-    color: #174b32;
-    font-size: 8px;
-    letter-spacing: 2px;
-    margin-top: 2px;
   }
 
   .nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 28px;
     flex: 1;
   }
 
@@ -584,28 +475,22 @@ const stories = [
     font-size: 14px;
     font-weight: 600;
     color: #31443a;
-    padding: 32px 0 28px;
+    padding: 33px 0 27px;
     border-bottom: 2px solid transparent;
   }
 
-  .nav a.active,
-  .nav a:hover {
+  .nav a:hover,
+  .nav a.active {
     color: #075b32;
-    border-color: #075b32;
-  }
-
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    border-bottom-color: #075b32;
   }
 
   .search {
-    height: 44px;
     width: 260px;
+    height: 43px;
     border: 1px solid #deddd5;
-    background: #faf9f3;
     border-radius: 30px;
+    background: #faf9f3;
     display: flex;
     align-items: center;
     padding: 0 15px;
@@ -613,7 +498,7 @@ const stories = [
   }
 
   .search span {
-    font-size: 23px;
+    font-size: 22px;
   }
 
   .search input {
@@ -624,34 +509,8 @@ const stories = [
     font-size: 12px;
   }
 
-  .user {
-    background: none;
-    border: 0;
-    font-size: 22px;
-    color: #063d27;
-  }
 
-  .community {
-    border: 0;
-    background: #064d2b;
-    color: white;
-    border-radius: 30px;
-    padding: 14px 23px;
-    font-weight: 700;
-    font-size: 12px;
-  }
-
-  .menu {
-    display: none;
-    background: none;
-    border: 0;
-    font-size: 25px;
-  }
-
-
-  /* =========================
-     HERO
-  ========================= */
+  /* HERO */
 
   .hero {
     height: 430px;
@@ -665,12 +524,13 @@ const stories = [
   .hero-background {
     position: absolute;
     inset: 0;
+
     background:
       linear-gradient(
         90deg,
-        rgba(6, 30, 19, .82) 0%,
-        rgba(7, 40, 23, .58) 35%,
-        rgba(7, 40, 23, .10) 75%
+        rgba(6,30,19,.86) 0%,
+        rgba(7,40,23,.60) 35%,
+        rgba(7,40,23,.08) 78%
       ),
       url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2000&q=90")
       center / cover;
@@ -695,8 +555,8 @@ const stories = [
     font-family: Georgia, serif;
     font-size: clamp(52px, 5vw, 78px);
     line-height: .98;
-    margin: 0;
     letter-spacing: -3px;
+    margin: 0;
   }
 
   .hero h1 em {
@@ -708,16 +568,10 @@ const stories = [
     font-size: 18px;
     line-height: 1.45;
     margin: 22px 0;
-    color: #f7f7ef;
-  }
-
-  .hero-buttons {
-    display: flex;
-    align-items: center;
-    gap: 28px;
   }
 
   .primary-btn {
+    display: inline-block;
     background: #65b94d;
     color: white;
     padding: 15px 25px;
@@ -730,37 +584,6 @@ const stories = [
     margin-left: 15px;
   }
 
-  .watch {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border: 0;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-  }
-
-  .play {
-    width: 48px;
-    height: 48px;
-    border: 1px solid white;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-size: 13px;
-  }
-
-  .watch strong,
-  .watch small {
-    display: block;
-    text-align: left;
-  }
-
-  .watch small {
-    opacity: .75;
-    margin-top: 3px;
-  }
-
   .hero-side {
     position: absolute;
     z-index: 3;
@@ -771,22 +594,11 @@ const stories = [
     font-family: cursive;
     font-size: 25px;
     line-height: 1.15;
-  }
-
-  .hero-signature {
-    position: absolute;
-    right: 50px;
-    bottom: 25px;
-    z-index: 3;
-    font-family: cursive;
-    font-size: 20px;
-    text-align: right;
+    opacity: .65;
   }
 
 
-  /* =========================
-     CATEGORIES
-  ========================= */
+  /* CATEGORIES */
 
   .category-wrap {
     max-width: 1375px;
@@ -819,11 +631,7 @@ const stories = [
     text-align: center;
   }
 
-  .category:last-child {
-    border-right: 0;
-  }
-
-  .category-icon {
+  .category div {
     font-size: 30px;
   }
 
@@ -834,23 +642,29 @@ const stories = [
   }
 
   .category-banner {
-    width: 360px;
+    width: 300px;
     border-radius: 18px;
+
     background:
-      linear-gradient(90deg, rgba(3,55,27,.7), rgba(3,55,27,.2)),
+      linear-gradient(
+        90deg,
+        rgba(3,55,27,.8),
+        rgba(3,55,27,.2)
+      ),
       url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=800&q=85")
       center / cover;
+
     color: white;
     display: flex;
     align-items: center;
-    padding: 20px 25px;
-    gap: 15px;
+    padding: 20px;
+    gap: 12px;
   }
 
   .category-banner strong {
     display: block;
     font-family: Georgia, serif;
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .category-banner span {
@@ -864,9 +678,7 @@ const stories = [
   }
 
 
-  /* =========================
-     CONTENT
-  ========================= */
+  /* STORIES */
 
   .content-section {
     max-width: 1375px;
@@ -883,7 +695,7 @@ const stories = [
 
   .section-heading h2 {
     font-family: Georgia, serif;
-    font-size: 27px;
+    font-size: 28px;
     margin: 0;
   }
 
@@ -909,25 +721,21 @@ const stories = [
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(0,0,0,.06);
-    display: flex;
     min-height: 190px;
   }
 
   .story-card img {
-    width: 42%;
-    height: 190px;
+    width: 100%;
+    height: 145px;
     object-fit: cover;
   }
 
   .story-content {
     padding: 15px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
   }
 
   .tag {
-    align-self: flex-start;
+    display: inline-block;
     padding: 5px 8px;
     background: #edf4e9;
     color: #39713c;
@@ -938,7 +746,7 @@ const stories = [
 
   .story-content h3 {
     font-family: Georgia, serif;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.15;
     margin: 10px 0 7px;
   }
@@ -951,10 +759,10 @@ const stories = [
   }
 
   .story-bottom {
-    margin-top: auto;
+    margin-top: 14px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
   }
 
   .story-bottom small {
@@ -972,15 +780,12 @@ const stories = [
   }
 
 
-  /* =========================
-     AIM
-  ========================= */
+  /* AIM */
 
   .aim-card {
-    background: #fff;
+    background: white;
     border-radius: 17px;
     padding: 28px;
-    position: relative;
     box-shadow: 0 4px 18px rgba(0,0,0,.04);
   }
 
@@ -988,6 +793,11 @@ const stories = [
     letter-spacing: 2px;
     color: #75917e;
     font-size: 9px;
+  }
+
+  .aim-leaf {
+    font-size: 30px;
+    margin-bottom: 10px;
   }
 
   .aim-card h2 {
@@ -999,4 +809,260 @@ const stories = [
 
   .aim-card p {
     color: #68736d;
-    line
+    line-height: 1.5;
+    font-size: 13px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+  }
+
+  .stats div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stats strong {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #075b32;
+  }
+
+  .stats span {
+    font-size: 9px;
+    color: #78827c;
+  }
+
+
+  /* QUOTE */
+
+  .quote-section {
+    max-width: 1375px;
+    margin: 70px auto;
+    padding: 0 20px;
+  }
+
+  .quote {
+    background: #eef2e8;
+    border-radius: 20px;
+    padding: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .quote-mark {
+    font-family: Georgia, serif;
+    font-size: 70px;
+    color: #75a85c;
+  }
+
+  .quote p {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    line-height: 1.3;
+    margin: 0 0 12px;
+  }
+
+  .quote small {
+    color: #55705e;
+  }
+
+  .journey-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 20px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .journey-links a {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-right: 1px solid #eee;
+  }
+
+  .journey-links span {
+    font-size: 25px;
+  }
+
+  .journey-links strong {
+    font-family: Georgia, serif;
+    font-size: 16px;
+  }
+
+
+  /* ABOUT */
+
+  .about {
+    background: #e7eee2;
+    padding: 70px 20px;
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .about-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #65806c;
+  }
+
+  .about h2 {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    line-height: 1.05;
+    margin: 15px 0 0;
+  }
+
+  .about p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #58675e;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    background: #fffef9;
+    padding: 40px 20px 20px;
+  }
+
+  .footer-top {
+    max-width: 1375px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .footer-brand img {
+    width: 230px;
+    height: auto;
+    display: block;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 25px;
+    font-size: 13px;
+  }
+
+  .footer-links a:hover {
+    color: #075b32;
+  }
+
+  .footer-message {
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-align: right;
+    color: #55705d;
+  }
+
+  .footer-message strong {
+    color: #075b32;
+  }
+
+  .footer-bottom {
+    max-width: 1375px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #e5e4dc;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #7b827d;
+  }
+
+
+  /* MOBILE */
+
+  @media (max-width: 900px) {
+
+    .nav-container {
+      padding: 0 20px;
+    }
+
+    .brand {
+      width: 220px;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 200px;
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .search {
+      margin-left: auto;
+      width: 200px;
+    }
+
+    .hero-content {
+      padding: 0 35px;
+    }
+
+    .hero-side {
+      display: none;
+    }
+
+    .category-wrap {
+      flex-direction: column;
+    }
+
+    .categories {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .category-banner {
+      width: 100%;
+      min-height: 100px;
+    }
+
+    .stories-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .footer-top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-message {
+      text-align: left;
+    }
+
+  }
+
+</style>
+
+</body>
+</html>
