@@ -768,21 +768,41 @@ footer {
 
 }
 
+   font-size: 25px;
+  }
+/* =========================================================
+   CIBUS LORE — MOBILE EDITORIAL HERO
+   MATCHES THE RIGHT-SIDE REFERENCE
+========================================================= */
 
-/* =========================
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 700px) {
 
-  /* HEADER */
+  /* -------------------------
+     HEADER
+  ------------------------- */
 
   .header {
-    height: 108px;
+    height: 110px;
+    background: #fffef9;
+    border-bottom: 1px solid #e7e4dc;
   }
 
   .nav-container {
-    padding: 0 25px;
+    height: 100%;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .brand {
@@ -790,8 +810,17 @@ footer {
   }
 
   .brand span {
-    font-size: 36px;
-    letter-spacing: -1.2px;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 35px;
+    line-height: 1;
+
+    font-weight: 700;
+    letter-spacing: -1.5px;
+
+    color: #123a2b;
+
+    white-space: nowrap;
   }
 
   .nav {
@@ -799,61 +828,575 @@ footer {
   }
 
 
-  /* HERO */
+  /* -------------------------
+     HAMBURGER
+  ------------------------- */
+
+  .mobile-menu {
+    display: flex;
+
+    width: 58px;
+    height: 58px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f0efe7;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+  }
+
+  .mobile-menu span {
+    width: 25px;
+    height: 3px;
+
+    background: #123a2b;
+
+    border-radius: 3px;
+
+    display: block;
+  }
+
+
+  /* =====================================================
+     HERO
+  ===================================================== */
 
   .hero {
-    height: 520px;
+    height: 900px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
   }
+
+
+  /* -------------------------
+     BACKGROUND / PLANT
+  ------------------------- */
 
   .hero-background {
-    background-position: 70% center;
-    background-size: cover;
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        90deg,
+
+        rgba(2, 35, 26, 0.98) 0%,
+
+        rgba(3, 39, 29, 0.91) 31%,
+
+        rgba(5, 46, 34, 0.56) 53%,
+
+        rgba(7, 48, 35, 0.12) 76%,
+
+        rgba(7, 48, 35, 0.02) 100%
+      ),
+
+      url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=95")
+      78% center / cover no-repeat;
+
+    transform: none;
   }
+
+
+  /* -------------------------
+     LIGHT ON RIGHT
+  ------------------------- */
+
+  .hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+      radial-gradient(
+        circle at 88% 27%,
+        rgba(247, 250, 226, 0.35),
+        transparent 34%
+      );
+  }
+
+
+  /* =====================================================
+     CONTENT
+  ===================================================== */
 
   .hero-content {
-    padding: 67px 25px 0;
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+
+    padding:
+      76px 30px 40px;
+
+    margin: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
   }
+
+
+  /* =====================================================
+     EYEBROW
+  ===================================================== */
 
   .eyebrow {
-    font-size: 10px;
 
-    letter-spacing: 4px;
+    display: flex;
 
-    margin-bottom: 23px;
+    align-items: center;
+
+    gap: 13px;
+
+    font-size: 9px;
+
+    letter-spacing: 4.5px;
+
+    font-weight: 600;
+
+    color: rgba(255,255,255,0.92);
+
+    margin-bottom: 29px;
+
+    white-space: nowrap;
   }
+
+  .eyebrow::before {
+
+    content: "";
+
+    width: 31px;
+    height: 3px;
+
+    background: #83d461;
+
+    border-radius: 4px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* =====================================================
+     TITLE
+  ===================================================== */
 
   .hero h1 {
-    font-size: 54px;
 
-    line-height: 0.94;
+    width: 315px;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size: 57px;
+
+    line-height: 0.91;
 
     letter-spacing: -3px;
+
+    font-weight: 700;
+
+    color: #fffdf5;
   }
 
+  .hero h1 em {
+
+    color: #83d461;
+
+    font-style: normal;
+  }
+
+
+  /* =====================================================
+     DESCRIPTION
+  ===================================================== */
+
   .hero p {
-    font-size: 17px;
 
-    line-height: 1.4;
+    width: 310px;
 
-    margin: 22px 0 24px;
+    max-width: 100%;
 
-    max-width: 390px;
+    margin:
+      28px 0 26px;
+
+    font-size: 16px;
+
+    line-height: 1.52;
+
+    color: rgba(247,249,244,0.94);
   }
 
   .hero p br {
     display: none;
   }
 
+
+  /* =====================================================
+     CTA
+  ===================================================== */
+
   .primary-btn {
-    padding: 15px 25px;
 
-    font-size: 15px;
+    width: 295px;
 
-    gap: 24px;
+    height: 58px;
+
+    min-width: 0;
+
+    padding:
+      0 10px 0 23px;
+
+    border-radius: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    background: #79c957;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-shadow:
+      0 10px 25px rgba(0,0,0,0.18);
   }
 
   .primary-btn span {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background:
+      rgba(255,255,255,0.20);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+
+    line-height: 1;
+  }
+
+
+  /* =====================================================
+     LOWER EDITORIAL NAVIGATION
+  ===================================================== */
+
+  .hero::before {
+
+    content:
+      "PEOPLE\A PLANTS\A PLACES\A FOOD\A STORIES";
+
+    white-space: pre;
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 185px;
+
+    bottom: 91px;
+
+    color:
+      rgba(241,247,232,0.72);
+
+    font-size: 9px;
+
+    line-height: 2.15;
+
+    letter-spacing: 3.5px;
+
+    font-weight: 500;
+  }
+
+
+  /* GREEN LINE */
+
+  .hero-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 185px;
+
+    bottom: 215px;
+
+    width: 30px;
+
+    height: 3px;
+
+    background: #83d461;
+
+    border-radius: 4px;
+  }
+
+
+  /* =====================================================
+     CIRCULAR LEAF MARK
+  ===================================================== */
+
+  .hero-content::before {
+
+    content: "🌿";
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 20px;
+
+    bottom: 72px;
+
+    width: 125px;
+
+    height: 125px;
+
+    border:
+      1px solid
+      rgba(220,238,202,0.38);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+    opacity: 0.78;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .header {
+    height: 105px;
+  }
+
+  .nav-container {
+    padding: 0 22px;
+  }
+
+  .brand span {
+    font-size: 34px;
+  }
+
+  .mobile-menu {
+    width: 54px;
+    height: 54px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    height: 875px;
+  }
+
+  .hero-background {
+
+    background-position:
+      78% center;
+  }
+
+  .hero-content {
+
+    padding:
+      70px 30px 35px;
+  }
+
+
+  /* EYEBROW */
+
+  .eyebrow {
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 27px;
+  }
+
+
+  /* TITLE */
+
+  .hero h1 {
+
+    width: 305px;
+
+    font-size: 55px;
+
+    line-height: 0.92;
+
+    letter-spacing: -2.8px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .hero p {
+
+    width: 300px;
+
+    font-size: 15.5px;
+
+    line-height: 1.52;
+
+    margin:
+      27px 0 25px;
+  }
+
+
+  /* BUTTON */
+
+  .primary-btn {
+
+    width: 275px;
+
+    height: 57px;
+
+    font-size: 15px;
+  }
+
+  .primary-btn span {
+
+    width: 41px;
+    height: 41px;
+
     font-size: 25px;
+  }
+
+
+  /* LOWER ELEMENTS */
+
+  .hero::before {
+
+    left: 181px;
+
+    bottom: 75px;
+
+    font-size: 8.5px;
+  }
+
+  .hero-content::after {
+
+    left: 181px;
+
+    bottom: 199px;
+
+    width: 28px;
+  }
+
+  .hero-content::before {
+
+    left: 15px;
+
+    bottom: 57px;
+
+    width: 120px;
+
+    height: 120px;
+
+    font-size: 25px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .brand span {
+    font-size: 30px;
+  }
+
+  .hero {
+    height: 840px;
+  }
+
+  .hero-content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .hero h1 {
+    width: 280px;
+    font-size: 50px;
+  }
+
+  .hero p {
+    width: 275px;
+    font-size: 14.5px;
+  }
+
+  .primary-btn {
+    width: 255px;
+  }
+
+  .hero::before {
+    left: 157px;
+  }
+
+  .hero-content::after {
+    left: 157px;
   }
 
 
