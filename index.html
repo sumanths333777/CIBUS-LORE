@@ -11,9 +11,9 @@ content="CIBUS LORE explores the people, plants, places and stories behind what 
 
 <style>
 
-/* =========================================================
+/* =========================
    RESET
-========================================================= */
+========================= */
 
 * {
   box-sizing: border-box;
@@ -42,18 +42,16 @@ img {
 }
 
 
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 .header {
   height: 115px;
   background: #fffef9;
   border-bottom: 1px solid #e7e4dc;
-
   display: flex;
   align-items: center;
-
   position: relative;
   z-index: 20;
 }
@@ -61,7 +59,6 @@ img {
 .nav-container {
   width: 100%;
   max-width: 1440px;
-
   margin: 0 auto;
   padding: 0 58px;
 
@@ -85,22 +82,16 @@ img {
 
 .brand span {
   font-family: Georgia, "Times New Roman", serif;
-
   font-size: 42px;
   line-height: 1;
-
   font-weight: 700;
   letter-spacing: -1px;
-
   color: #102d22;
-
   white-space: nowrap;
 }
 
 
-/* =========================================================
-   DESKTOP NAV
-========================================================= */
+/* NAV */
 
 .nav {
   flex: 1;
@@ -110,7 +101,6 @@ img {
   justify-content: center;
 
   gap: 48px;
-
   height: 100%;
 
   min-width: 0;
@@ -130,7 +120,6 @@ img {
   font-weight: 600;
 
   color: #172d25;
-
   white-space: nowrap;
 }
 
@@ -159,18 +148,9 @@ img {
 }
 
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-menu {
-  display: none;
-}
-
-
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero {
   height: 640px;
@@ -183,7 +163,7 @@ img {
 }
 
 
-/* HERO BACKGROUND */
+/* BACKGROUND */
 
 .hero-background {
   position: absolute;
@@ -217,6 +197,7 @@ img {
   margin: 0 auto;
 
   padding-left: 145px;
+
   padding-top: 78px;
 }
 
@@ -275,9 +256,7 @@ img {
 }
 
 
-/* =========================================================
-   BUTTON
-========================================================= */
+/* BUTTON */
 
 .primary-btn {
   display: inline-flex;
@@ -312,9 +291,9 @@ img {
 }
 
 
-/* =========================================================
+/* =========================
    FEATURED STORIES
-========================================================= */
+========================= */
 
 .content-section {
   width: 100%;
@@ -331,6 +310,7 @@ img {
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   gap: 20px;
@@ -352,23 +332,19 @@ img {
 
 .section-heading a {
   font-size: 15px;
-
   font-weight: 700;
-
   white-space: nowrap;
 }
 
 
-/* =========================================================
+/* =========================
    STORY GRID
-========================================================= */
+========================= */
 
 .stories-layout {
   display: grid;
 
-  grid-template-columns:
-    minmax(0, 2.2fr)
-    minmax(250px, 1fr);
+  grid-template-columns: minmax(0, 2.2fr) minmax(250px, 1fr);
 
   gap: 25px;
 
@@ -382,8 +358,7 @@ img {
 .story-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 20px;
 
@@ -416,9 +391,7 @@ img {
 }
 
 
-/* =========================================================
-   STORY CONTENT
-========================================================= */
+/* STORY CONTENT */
 
 .story-content {
   padding: 18px;
@@ -461,9 +434,9 @@ img {
 }
 
 
-/* =========================================================
+/* =========================
    AIM CARD
-========================================================= */
+========================= */
 
 .aim-card {
   background: white;
@@ -480,7 +453,6 @@ img {
 
 .aim-leaf {
   font-size: 35px;
-
   margin-bottom: 15px;
 }
 
@@ -511,9 +483,9 @@ img {
 }
 
 
-/* =========================================================
+/* =========================
    QUOTE
-========================================================= */
+========================= */
 
 .quote-section {
   width: 100%;
@@ -534,6 +506,7 @@ img {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 25px;
@@ -560,9 +533,9 @@ img {
 }
 
 
-/* =========================================================
+/* =========================
    ABOUT
-========================================================= */
+========================= */
 
 .about {
   background: #e7eee2;
@@ -577,9 +550,7 @@ img {
 
   display: grid;
 
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
   gap: 70px;
 
@@ -613,9 +584,9 @@ img {
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer {
   background: #fffef9;
@@ -631,6 +602,7 @@ footer {
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   gap: 30px;
@@ -685,9 +657,9 @@ footer {
 }
 
 
-/* =========================================================
+/* =========================
    LAPTOP
-========================================================= */
+========================= */
 
 @media (max-width: 1200px) {
 
@@ -714,12 +686,13 @@ footer {
   .hero-content {
     padding-left: 80px;
   }
+
 }
 
 
-/* =========================================================
+/* =========================
    TABLET
-========================================================= */
+========================= */
 
 @media (max-width: 1000px) {
 
@@ -763,12 +736,13 @@ footer {
   .hero p {
     font-size: 20px;
   }
+
 }
 
 
-/* =========================================================
+/* =========================
    TABLET / SMALL LAPTOP
-========================================================= */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -791,60 +765,33 @@ footer {
   .aim-card {
     margin-top: 5px;
   }
+
 }
 
 
-/* =========================================================
-   MOBILE EDITORIAL HERO
-========================================================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
-
-  /* =====================================================
-     HEADER
-  ===================================================== */
+  /* HEADER */
 
   .header {
-    height: 105px;
-
-    background: #fffef9;
-
-    border-bottom: 1px solid #e7e4dc;
+    height: 108px;
   }
 
   .nav-container {
-    height: 100%;
-
-    padding: 0 22px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
+    padding: 0 25px;
   }
 
   .brand {
     flex: 1;
-
-    min-width: 0;
   }
 
   .brand span {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 34px;
-
-    line-height: 1;
-
-    font-weight: 700;
-
-    letter-spacing: -1.5px;
-
-    color: #123a2b;
-
-    white-space: nowrap;
+    font-size: 36px;
+    letter-spacing: -1.2px;
   }
 
   .nav {
@@ -852,386 +799,65 @@ footer {
   }
 
 
-  /* =====================================================
-     MOBILE MENU
-  ===================================================== */
-
-  .mobile-menu {
-    display: flex;
-
-    width: 54px;
-    height: 54px;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    background: #f0efe7;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;
-
-    gap: 6px;
-
-    padding: 0;
-
-    flex-shrink: 0;
-  }
-
-  .mobile-menu span {
-    width: 24px;
-    height: 3px;
-
-    background: #123a2b;
-
-    border-radius: 3px;
-
-    display: block;
-  }
-
-
-  /* =====================================================
-     HERO
-  ===================================================== */
+  /* HERO */
 
   .hero {
-    height: 875px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    color: white;
+    height: 520px;
   }
-
-
-  /* BACKGROUND */
 
   .hero-background {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-      linear-gradient(
-        90deg,
-
-        rgba(2,35,26,.98) 0%,
-
-        rgba(3,39,29,.91) 31%,
-
-        rgba(5,46,34,.56) 53%,
-
-        rgba(7,48,35,.12) 76%,
-
-        rgba(7,48,35,.02) 100%
-      ),
-
-      url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=95")
-      78% center / cover no-repeat;
+    background-position: 70% center;
+    background-size: cover;
   }
-
-
-  /* LIGHT ON RIGHT */
-
-  .hero::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    pointer-events: none;
-
-    background:
-      radial-gradient(
-        circle at 88% 27%,
-        rgba(247,250,226,.35),
-        transparent 34%
-      );
-  }
-
-
-  /* =====================================================
-     HERO CONTENT
-  ===================================================== */
 
   .hero-content {
-    position: relative;
-
-    z-index: 3;
-
-    width: 100%;
-
-    height: 100%;
-
-    margin: 0;
-
-    padding:
-      70px 30px 35px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-start;
+    padding: 67px 25px 0;
   }
 
-
-  /* =====================================================
-     EYEBROW
-  ===================================================== */
-
   .eyebrow {
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    font-size: 8px;
+    font-size: 10px;
 
     letter-spacing: 4px;
 
-    font-weight: 600;
-
-    color: rgba(255,255,255,.92);
-
-    margin-bottom: 27px;
-
-    white-space: nowrap;
+    margin-bottom: 23px;
   }
-
-  .eyebrow::before {
-    content: "";
-
-    width: 30px;
-
-    height: 3px;
-
-    background: #83d461;
-
-    border-radius: 4px;
-
-    flex-shrink: 0;
-  }
-
-
-  /* =====================================================
-     TITLE
-  ===================================================== */
 
   .hero h1 {
-    width: 305px;
+    font-size: 54px;
 
-    max-width: 100%;
+    line-height: 0.94;
 
-    margin: 0;
-
-    font-family:
-      Georgia,
-      "Times New Roman",
-      serif;
-
-    font-size: 55px;
-
-    line-height: .92;
-
-    letter-spacing: -2.8px;
-
-    font-weight: 700;
-
-    color: #fffdf5;
+    letter-spacing: -3px;
   }
-
-  .hero h1 em {
-    color: #83d461;
-
-    font-style: normal;
-  }
-
-
-  /* =====================================================
-     DESCRIPTION
-  ===================================================== */
 
   .hero p {
-    width: 300px;
+    font-size: 17px;
 
-    max-width: 100%;
+    line-height: 1.4;
 
-    margin:
-      27px 0 25px;
+    margin: 22px 0 24px;
 
-    font-size: 15.5px;
-
-    line-height: 1.52;
-
-    color: rgba(247,249,244,.94);
+    max-width: 390px;
   }
 
   .hero p br {
     display: none;
   }
 
-
-  /* =====================================================
-     CTA
-  ===================================================== */
-
   .primary-btn {
-    width: 275px;
-
-    height: 57px;
-
-    min-width: 0;
-
-    padding:
-      0 10px 0 23px;
-
-    border-radius: 40px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    background: #79c957;
-
-    color: white;
+    padding: 15px 25px;
 
     font-size: 15px;
 
-    font-weight: 700;
-
-    box-shadow:
-      0 10px 25px rgba(0,0,0,.18);
+    gap: 24px;
   }
 
   .primary-btn span {
-    width: 41px;
-
-    height: 41px;
-
-    border-radius: 50%;
-
-    background:
-      rgba(255,255,255,.20);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
     font-size: 25px;
-
-    line-height: 1;
   }
 
 
-  /* =====================================================
-     LOWER EDITORIAL NAVIGATION
-  ===================================================== */
-
-  .hero::before {
-    content:
-      "PEOPLE\A PLANTS\A PLACES\A FOOD\A STORIES";
-
-    white-space: pre;
-
-    position: absolute;
-
-    z-index: 5;
-
-    left: 181px;
-
-    bottom: 75px;
-
-    color:
-      rgba(241,247,232,.72);
-
-    font-size: 8.5px;
-
-    line-height: 2.15;
-
-    letter-spacing: 3.5px;
-
-    font-weight: 500;
-  }
-
-
-  /* GREEN LINE */
-
-  .hero-content::after {
-    content: "";
-
-    position: absolute;
-
-    z-index: 5;
-
-    left: 181px;
-
-    bottom: 199px;
-
-    width: 28px;
-
-    height: 3px;
-
-    background: #83d461;
-
-    border-radius: 4px;
-  }
-
-
-  /* =====================================================
-     CIRCULAR LEAF MARK
-  ===================================================== */
-
-  .hero-content::before {
-    content: "🌿";
-
-    position: absolute;
-
-    z-index: 5;
-
-    left: 15px;
-
-    bottom: 57px;
-
-    width: 120px;
-
-    height: 120px;
-
-    border:
-      1px solid
-      rgba(220,238,202,.38);
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 25px;
-
-    opacity: .78;
-  }
-
-
-  /* =====================================================
-     FEATURED STORIES
-     KEEP ORIGINAL CARD DESIGN
-  ===================================================== */
+  /* FEATURED STORIES */
 
   .content-section {
     margin: 62px auto 78px;
@@ -1255,6 +881,9 @@ footer {
     font-size: 13px;
   }
 
+
+  /* CARDS ONE BY ONE */
+
   .stories-layout {
     grid-template-columns: 1fr;
 
@@ -1273,10 +902,7 @@ footer {
 
   .story-card img {
     width: 100%;
-
     height: 215px;
-
-    object-fit: cover;
   }
 
   .story-content {
@@ -1296,14 +922,11 @@ footer {
 
   .aim-card {
     width: 100%;
-
     padding: 28px;
   }
 
 
-  /* =====================================================
-     QUOTE
-  ===================================================== */
+  /* QUOTE */
 
   .quote-section {
     margin: 65px auto;
@@ -1326,9 +949,7 @@ footer {
   }
 
 
-  /* =====================================================
-     ABOUT
-  ===================================================== */
+  /* ABOUT */
 
   .about {
     padding: 65px 20px;
@@ -1349,9 +970,7 @@ footer {
   }
 
 
-  /* =====================================================
-     FOOTER
-  ===================================================== */
+  /* FOOTER */
 
   footer {
     padding: 40px 20px 22px;
@@ -1374,12 +993,131 @@ footer {
 
     gap: 10px;
   }
+
 }
 
 
-/* =========================================================
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .header {
+    height: 105px;
+  }
+
+  .nav-container {
+    padding: 0 22px;
+  }
+
+  .brand span {
+    font-size: 34px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    height: 500px;
+  }
+
+  .hero-background {
+    background-position: 72% center;
+    background-size: cover;
+  }
+
+  .hero-content {
+    padding: 62px 22px 0;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 3.5px;
+
+    margin-bottom: 21px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+
+    line-height: 0.94;
+
+    letter-spacing: -2.4px;
+  }
+
+  .hero p {
+    font-size: 15px;
+
+    line-height: 1.42;
+
+    margin: 19px 0 22px;
+
+    max-width: 350px;
+  }
+
+  .primary-btn {
+    padding: 14px 22px;
+
+    font-size: 14px;
+
+    gap: 20px;
+  }
+
+  .primary-btn span {
+    font-size: 23px;
+  }
+
+
+  /* FEATURED */
+
+  .content-section {
+    margin-top: 58px;
+
+    padding: 0 15px;
+  }
+
+  .section-heading {
+    align-items: baseline;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+  }
+
+  .section-heading a {
+    font-size: 12px;
+  }
+
+  .story-card img {
+    height: 190px;
+  }
+
+
+  /* QUOTE */
+
+  .quote {
+    padding: 35px 18px;
+  }
+
+  .quote p {
+    font-size: 20px;
+  }
+
+
+  /* ABOUT */
+
+  .about h2 {
+    font-size: 38px;
+  }
+
+}
+
+
+/* =========================
    VERY SMALL PHONES
-========================================================= */
+========================= */
 
 @media (max-width: 360px) {
 
@@ -1387,44 +1125,31 @@ footer {
     font-size: 30px;
   }
 
-  .mobile-menu {
-    width: 50px;
-    height: 50px;
-  }
-
   .hero {
-    height: 840px;
+    height: 475px;
   }
 
   .hero-content {
-    padding-left: 22px;
-
-    padding-right: 22px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .hero h1 {
-    width: 280px;
-
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .hero p {
-    width: 275px;
-
-    font-size: 14.5px;
+    font-size: 14px;
   }
 
-  .primary-btn {
-    width: 255px;
+  .section-heading h2 {
+    font-size: 29px;
   }
 
-  .hero::before {
-    left: 157px;
+  .section-heading a {
+    font-size: 11px;
   }
 
-  .hero-content::after {
-    left: 157px;
-  }
 }
 
 </style>
@@ -1434,9 +1159,9 @@ footer {
 <body>
 
 
-<!-- =========================================================
+<!-- =========================
      HEADER
-========================================================= -->
+========================= -->
 
 <header class="header">
 
@@ -1446,18 +1171,13 @@ footer {
       <span>CIBUS LORE</span>
     </a>
 
-
-    <!-- DESKTOP NAV -->
-
     <nav class="nav">
 
       <a href="/" class="active">
         Home
       </a>
 
-      <a href="#stories">
-        Categories
-      </a>
+     
 
       <a href="#stories">
         Articles
@@ -1473,33 +1193,328 @@ footer {
 
     </nav>
 
-
-    <!-- MOBILE MENU -->
-
-    <button
-      class="mobile-menu"
-      type="button"
-      aria-label="Open menu"
-    >
-
-      <span></span>
-      <span></span>
-      <span></span>
-
-    </button>
-
   </div>
 
 </header>
 
 
-<!-- =========================================================
-     MAIN
-========================================================= -->
+<!-- =========================
+     HERO
+========================= -->
 
 <main>
 
+<section class="hero">
 
-<!-- =========================================================
-     HERO
-=============================================
+  <div class="hero-background"></div>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      GOOD FOOD&nbsp;&nbsp;&nbsp;&nbsp; BRIGHTER LIVES
+    </div>
+
+    <h1>
+      Every Food<br>
+      Has a <em>Story.</em>
+    </h1>
+
+    <p>
+      From farms to your table — explore the people,<br>
+      places and journeys behind what we eat.
+    </p>
+
+    <a href="#stories" class="primary-btn">
+      Start Exploring
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURED STORIES
+========================= -->
+
+<section
+  class="content-section"
+  id="stories"
+>
+
+  <div class="section-heading">
+
+    <h2>
+      Featured Stories
+    </h2>
+
+    <a href="#">
+      View All →
+    </a>
+
+  </div>
+
+
+  <div class="stories-layout">
+
+    <div class="story-grid">
+
+
+      <!-- APPLE -->
+
+      <article class="story-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=1000&q=90"
+          alt="Apple"
+          loading="lazy"
+        >
+
+        <div class="story-content">
+
+          <span class="tag">
+            FRUITS
+          </span>
+
+          <h3>
+            The Journey of an Apple
+          </h3>
+
+          <p>
+            From orchard to your plate —
+            a story of care, climate and community.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ALMONDS -->
+
+      <article class="story-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1772986798816-904e7edfdd3e?auto=format&fit=crop&w=1000&q=90"
+          alt="Almonds"
+          loading="lazy"
+        >
+
+        <div class="story-content">
+
+          <span class="tag">
+            NUTS
+          </span>
+
+          <h3>
+            Almonds: Small Seeds, Big Benefits
+          </h3>
+
+          <p>
+            A global journey from ancient
+            trade to modern superfood.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- FARM -->
+
+      <article class="story-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=90"
+          alt="Farm"
+          loading="lazy"
+        >
+
+        <div class="story-content">
+
+          <span class="tag">
+            PLACES
+          </span>
+
+          <h3>
+            The Land That Feeds Us
+          </h3>
+
+          <p>
+            Exploring the regions, people
+            and cultures behind food.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- AIM CARD -->
+
+    <aside class="aim-card">
+
+      <div class="aim-leaf">
+        🌿
+      </div>
+
+      <small>
+        OUR AIM
+      </small>
+
+      <h2>
+        A Healthier<br>
+        Planet Through<br>
+        Better Food
+      </h2>
+
+      <p>
+        We tell the real stories behind food —
+        for a healthier you and a brighter planet.
+      </p>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     QUOTE
+========================= -->
+
+<section class="quote-section">
+
+  <div class="quote">
+
+    <span class="quote-mark">
+      “
+    </span>
+
+    <div>
+
+      <p>
+        Food is not just what we eat,<br>
+        but a story of people, nature and time.
+      </p>
+
+      <small>
+        — CIBUS LORE
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+  class="about"
+  id="about"
+>
+
+  <div class="about-inner">
+
+    <div>
+
+      <span class="about-label">
+        THE CIBUS LORE MISSION
+      </span>
+
+      <h2>
+        Every ingredient<br>
+        has a journey.
+      </h2>
+
+    </div>
+
+
+    <p>
+
+      CIBUS LORE is a place to discover
+      the stories behind the food we see
+      every day — where it comes from,
+      who grows it, how it travels and
+      why it matters.
+
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="footer-top">
+
+    <a href="/" class="footer-brand">
+      CIBUS LORE
+    </a>
+
+    <div class="footer-links">
+
+      <a href="/">
+        Home
+      </a>
+
+      <a href="#stories">
+        Categories
+      </a>
+
+      <a href="#stories">
+        Articles
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+    </div>
+
+
+    <div class="footer-message">
+
+      Good Food<br>
+
+      <strong>
+        Brighter Lives
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 CIBUS LORE. All rights reserved.
+    </span>
+
+    <span>
+      People • Plants • Places • Food • Stories
+    </span>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
