@@ -126,7 +126,22 @@ img {
 
 /* ACTIVE HOME */
 
+.nav a.active::after {
+  content: "";
 
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 18px;
+
+  height: 4px;
+
+  background: #6fa95a;
+
+  border-radius: 2px;
+}
 
 .nav a:hover {
   color: #075b32;
@@ -134,104 +149,73 @@ img {
 
 
 /* =========================
-   PREMIUM EDITORIAL HERO
+   HERO
 ========================= */
 
 .hero {
-  height: 670px;
+  height: 640px;
+
   position: relative;
+
   overflow: hidden;
+
   color: white;
-  isolation: isolate;
 }
 
-/* BACKGROUND IMAGE + EDITORIAL GRADING */
+
+/* BACKGROUND */
 
 .hero-background {
   position: absolute;
   inset: 0;
-  z-index: -2;
 
   background:
     linear-gradient(
       90deg,
-      rgba(5, 30, 24, 0.96) 0%,
-      rgba(7, 38, 30, 0.86) 28%,
-      rgba(8, 43, 34, 0.58) 52%,
-      rgba(8, 43, 34, 0.18) 76%,
-      rgba(8, 43, 34, 0.04) 100%
+      rgba(7, 35, 29, 0.92) 0%,
+      rgba(8, 42, 34, 0.72) 32%,
+      rgba(10, 48, 38, 0.28) 65%,
+      rgba(10, 48, 38, 0.08) 100%
     ),
+
     url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2200&q=90")
     center center / cover no-repeat;
-
-  transform: scale(1.015);
-}
-
-/* SUBTLE DEPTH */
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at 72% 48%,
-      rgba(255,255,255,0.13) 0%,
-      rgba(255,255,255,0) 35%
-    );
 }
 
 
-/* CONTENT */
+/* HERO CONTENT */
 
 .hero-content {
   position: relative;
+
   z-index: 3;
 
-  max-width: 1280px;
+  max-width: 1440px;
+
   height: 100%;
 
   margin: 0 auto;
 
-  padding:
-    108px 55px 70px 95px;
+  padding-left: 145px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  padding-top: 78px;
 }
 
 
 /* EYEBROW */
 
 .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+  font-size: 17px;
 
-  font-size: 12px;
-  letter-spacing: 6px;
-  font-weight: 700;
+  letter-spacing: 9px;
 
-  margin-bottom: 30px;
+  font-weight: 500;
 
-  color: rgba(248, 247, 238, 0.88);
+  margin-bottom: 32px;
+
+  color: #f4f3e9;
 
   white-space: nowrap;
-}
-
-.eyebrow::before {
-  content: "";
-
-  width: 38px;
-  height: 1px;
-
-  background: #83d461;
-
-  display: inline-block;
 }
 
 
@@ -240,13 +224,11 @@ img {
 .hero h1 {
   margin: 0;
 
-  max-width: 850px;
-
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: clamp(72px, 7vw, 108px);
+  font-size: clamp(70px, 6.2vw, 104px);
 
-  line-height: 0.91;
+  line-height: 0.92;
 
   letter-spacing: -5px;
 
@@ -264,75 +246,51 @@ img {
 /* DESCRIPTION */
 
 .hero p {
-  max-width: 590px;
+  margin: 28px 0 30px;
 
-  margin: 32px 0 34px;
+  font-size: 25px;
 
-  font-size: 21px;
+  line-height: 1.45;
 
-  line-height: 1.55;
-
-  color: rgba(247, 248, 243, 0.88);
+  color: #f3f4ef;
 }
 
 
 /* BUTTON */
 
 .primary-btn {
-  width: fit-content;
-
   display: inline-flex;
+
   align-items: center;
-  justify-content: space-between;
 
-  min-width: 245px;
-
-  gap: 40px;
+  gap: 32px;
 
   background: #78c45c;
+
   color: white;
 
-  padding: 17px 25px 17px 28px;
+  padding: 19px 34px;
 
-  border-radius: 50px;
+  border-radius: 40px;
 
-  font-size: 16px;
+  font-size: 18px;
+
   font-weight: 700;
 
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.16);
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .primary-btn span {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: rgba(255,255,255,0.18);
-
-  font-size: 25px;
-  line-height: 1;
+  font-size: 28px;
+  line-height: 0;
 }
 
 .primary-btn:hover {
-  background: #6fba54;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 16px 35px rgba(0, 0, 0, 0.20);
+  background: #67b34d;
+  transform: translateY(-2px);
 }
-   
+
+
 /* =========================
    FEATURED STORIES
 ========================= */
@@ -811,46 +769,61 @@ footer {
 }
 
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 700px) {
 
+  /* HEADER */
+
+  .header {
+    height: 108px;
+  }
+
+  .nav-container {
+    padding: 0 25px;
+  }
+
+  .brand {
+    flex: 1;
+  }
+
+  .brand span {
+    font-size: 36px;
+    letter-spacing: -1.2px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+
+  /* HERO */
+
   .hero {
-    height: 600px;
+    height: 520px;
   }
 
   .hero-background {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(5, 30, 24, 0.91) 0%,
-        rgba(7, 38, 30, 0.78) 43%,
-        rgba(7, 38, 30, 0.34) 72%,
-        rgba(7, 38, 30, 0.10) 100%
-      ),
-      url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=90")
-      66% center / cover no-repeat;
+    background-position: 70% center;
+    background-size: cover;
   }
 
   .hero-content {
-    padding: 82px 28px 50px;
+    padding: 67px 25px 0;
   }
 
   .eyebrow {
-    gap: 13px;
+    font-size: 10px;
 
-    font-size: 9px;
     letter-spacing: 4px;
 
-    margin-bottom: 25px;
-  }
-
-  .eyebrow::before {
-    width: 25px;
+    margin-bottom: 23px;
   }
 
   .hero h1 {
-    max-width: 520px;
-
-    font-size: 55px;
+    font-size: 54px;
 
     line-height: 0.94;
 
@@ -858,32 +831,30 @@ footer {
   }
 
   .hero p {
-    max-width: 410px;
-
-    margin: 25px 0 28px;
-
     font-size: 17px;
 
-    line-height: 1.48;
+    line-height: 1.4;
+
+    margin: 22px 0 24px;
+
+    max-width: 390px;
+  }
+
+  .hero p br {
+    display: none;
   }
 
   .primary-btn {
-    min-width: 225px;
-
-    padding: 14px 20px 14px 24px;
+    padding: 15px 25px;
 
     font-size: 15px;
 
-    gap: 28px;
+    gap: 24px;
   }
 
   .primary-btn span {
-    width: 39px;
-    height: 39px;
-
-    font-size: 23px;
+    font-size: 25px;
   }
-}
 
 
   /* FEATURED STORIES */
@@ -1206,6 +1177,9 @@ footer {
         Home
       </a>
 
+      <a href="#stories">
+        Categories
+      </a>
 
       <a href="#stories">
         Articles
