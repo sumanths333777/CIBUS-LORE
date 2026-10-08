@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>CIBUS LORE — Admin</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8f6ee;
+  color: #153b29;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background: #fffef9;
+  border-bottom: 1px solid #e7e4dc;
+  padding: 22px 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+header span {
+  color: #65b94d;
+}
+
+.container {
+  max-width: 900px;
+  margin: 45px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 5px 25px rgba(0,0,0,.06);
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 22px 0 8px;
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #d9ded7;
+  border-radius: 10px;
+  padding: 14px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #65b94d;
+}
+
+textarea {
+  min-height: 300px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 25px;
+  border: 0;
+  background: #65b94d;
+  color: white;
+  padding: 15px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #55a63f;
+}
+
+#message {
+  margin-top: 18px;
+  font-weight: 700;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>CIBUS <span>LORE</span> — Admin</h1>
+</header>
+
+<main class="container">
+
+  <div class="card">
+
+    <h2>New Article</h2>
+
+    <label for="title">Article Title</label>
+    <input
+      id="title"
+      type="text"
+      placeholder="The Journey of an Apple"
+    >
+
+    <label for="slug">Slug</label>
+    <input
+      id="slug"
+      type="text"
+      placeholder="the-journey-of-an-apple"
+    >
+
+    <label for="description">Short Description</label>
+    <textarea
+      id="description"
+      style="min-height:120px"
+      placeholder="A short introduction to the article..."
+    ></textarea>
+
+    <label for="content">Article Content</label>
+    <textarea
+      id="content"
+      placeholder="Write your complete CIBUS LORE story here..."
+    ></textarea>
+
+    <button onclick="publishArticle()">
+      Publish Article
+    </button>
+
+    <div id="message"></div>
+
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+async function publishArticle() {
+
+  const title = document.getElementById("title").value.trim();
+  const slug = document.getElementById("slug").value.trim();
+  const description = document.getElementById("description").value.trim();
+  const content = document.getElementById("content").value.trim();
+  const message = document.getElementById("message");
+
+  if (!title || !slug || !content) {
+    message.textContent =
+      "Please fill in the title, slug and article content.";
+    message.style.color = "#b33a3a";
+    return;
+  }
+
+  message.textContent = "Publishing...";
+
+  const { error } = await supabaseClient
+    .from("articles")
+    .insert([
+      {
+        title: title,
+        slug: slug,
+        description: description,
+        content: content
+      }
+    ]);
+
+  if (error) {
+    message.textContent = "Error: " + error.message;
+    message.style.color = "#b33a3a";
+    return;
+  }
+
+  message.textContent = "Article published successfully! 🎉";
+  message.style.color = "#39713c";
+
+  document.getElementById("title").value = "";
+  document.getElementById("slug").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("content").value = "";
+}
+
+</script>
+
+</body>
+</html>
