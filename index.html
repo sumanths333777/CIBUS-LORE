@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>CIBUS LORE — The Story Behind What We Eat</title>
 
-<meta name="description"
-content="CIBUS LORE explores the people, plants, places and stories behind what we eat.">
+<meta
+  name="description"
+  content="CIBUS LORE explores the people, plants, places and stories behind what we eat."
+>
 
 <style>
 
-/* =========================
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -25,56 +32,84 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
+
   background: #f8f6ee;
   color: #153b29;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .header {
-  height: 115px;
+  width: 100%;
+  height: 88px;
+
   background: #fffef9;
-  border-bottom: 1px solid #e7e4dc;
-  display: flex;
-  align-items: center;
+
+  border-bottom:
+    1px solid #e7e4dc;
+
   position: relative;
-  z-index: 20;
+  z-index: 100;
 }
 
 .nav-container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1400px;
+
+  height: 100%;
+
   margin: 0 auto;
 
-  padding: 0 58px;
+  padding:
+    0 clamp(20px, 4vw, 55px);
 
   display: flex;
   align-items: center;
 }
 
 
-/* CIBUS LORE */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .brand {
-  flex: 0 0 390px;
+  flex: 0 0 auto;
+
+  width: clamp(240px, 25vw, 300px);
 
   display: flex;
   align-items: center;
 }
 
 .brand span {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: 42px;
+  font-size:
+    clamp(27px, 2.5vw, 36px);
+
   line-height: 1;
 
   font-weight: 700;
@@ -87,28 +122,35 @@ a {
 }
 
 
-/* NAV */
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
 
 .nav {
+  flex: 1;
+
+  height: 100%;
+
   display: flex;
   align-items: center;
 
-  gap: 55px;
+  justify-content: flex-start;
 
-  height: 100%;
+  gap: clamp(20px, 2.5vw, 38px);
 }
 
 .nav a {
-  position: relative;
-
   height: 100%;
+
+  position: relative;
 
   display: flex;
   align-items: center;
 
-  padding-top: 4px;
+  padding-top: 2px;
 
-  font-size: 18px;
+  font-size:
+    clamp(13px, 1.15vw, 16px);
 
   font-weight: 600;
 
@@ -117,8 +159,12 @@ a {
   white-space: nowrap;
 }
 
+.nav a:hover {
+  color: #075b32;
+}
 
-/* ACTIVE UNDERLINE */
+
+/* ACTIVE LINK */
 
 .nav a.active::after {
   content: "";
@@ -128,26 +174,51 @@ a {
   left: 0;
   right: 0;
 
-  bottom: 18px;
+  bottom: 14px;
 
-  height: 4px;
+  height: 3px;
+
+  border-radius: 3px;
 
   background: #6fa95a;
-
-  border-radius: 2px;
-}
-
-.nav a:hover {
-  color: #075b32;
 }
 
 
-/* =========================
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  margin-left: auto;
+
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #edf2e8;
+
+  color: #153b29;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
-  height: 640px;
+  width: 100%;
+
+  height:
+    clamp(400px, 42vw, 500px);
 
   position: relative;
 
@@ -157,7 +228,7 @@ a {
 }
 
 
-/* BACKGROUND */
+/* HERO IMAGE */
 
 .hero-background {
   position: absolute;
@@ -165,15 +236,19 @@ a {
   inset: 0;
 
   background:
+
     linear-gradient(
       90deg,
-      rgba(7, 35, 29, 0.92) 0%,
-      rgba(8, 42, 34, 0.72) 32%,
-      rgba(10, 48, 38, 0.28) 65%,
-      rgba(10, 48, 38, 0.08) 100%
+      rgba(7, 35, 29, .93) 0%,
+      rgba(8, 42, 34, .74) 32%,
+      rgba(10, 48, 38, .32) 65%,
+      rgba(10, 48, 38, .08) 100%
     ),
 
-    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2200&q=90")
+    url(
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2200&q=90"
+    )
+
     center center / cover no-repeat;
 }
 
@@ -185,45 +260,56 @@ a {
 
   z-index: 3;
 
-  max-width: 1440px;
+  width: 100%;
+  max-width: 1400px;
 
   height: 100%;
 
   margin: 0 auto;
 
-  padding-left: 145px;
+  padding-left:
+    clamp(40px, 10vw, 145px);
 
-  padding-top: 78px;
+  padding-top:
+    clamp(45px, 6vw, 70px);
 }
 
 
 /* EYEBROW */
 
 .eyebrow {
-  font-size: 17px;
+  margin-bottom:
+    clamp(14px, 2vw, 22px);
 
-  letter-spacing: 9px;
+  font-size:
+    clamp(10px, 1.1vw, 15px);
+
+  letter-spacing:
+    clamp(4px, .7vw, 8px);
 
   font-weight: 500;
-
-  margin-bottom: 32px;
 
   color: #f4f3e9;
 }
 
 
-/* MAIN TITLE */
+/* HERO TITLE */
 
 .hero h1 {
   margin: 0;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: clamp(70px, 6.2vw, 104px);
+  font-size:
+    clamp(48px, 6vw, 82px);
 
-  line-height: 0.92;
+  line-height: .94;
 
-  letter-spacing: -5px;
+  letter-spacing:
+    clamp(-4px, -.25vw, -2px);
 
   font-weight: 700;
 
@@ -237,12 +323,16 @@ a {
 }
 
 
-/* DESCRIPTION */
+/* HERO DESCRIPTION */
 
 .hero p {
-  margin: 28px 0 30px;
+  margin:
+    clamp(16px, 2vw, 24px)
+    0
+    clamp(18px, 2.5vw, 27px);
 
-  font-size: 25px;
+  font-size:
+    clamp(14px, 1.55vw, 20px);
 
   line-height: 1.45;
 
@@ -257,25 +347,31 @@ a {
 
   align-items: center;
 
-  gap: 32px;
+  gap:
+    clamp(15px, 2vw, 25px);
 
   background: #78c45c;
 
   color: white;
 
-  padding: 19px 34px;
+  padding:
+    clamp(12px, 1.4vw, 16px)
+    clamp(20px, 2.5vw, 28px);
 
   border-radius: 40px;
 
-  font-size: 18px;
+  font-size:
+    clamp(13px, 1.2vw, 16px);
 
   font-weight: 700;
 
-  transition: 0.25s ease;
+  transition:
+    .25s ease;
 }
 
 .primary-btn span {
-  font-size: 28px;
+  font-size:
+    clamp(19px, 2vw, 25px);
 
   line-height: 0;
 }
@@ -283,23 +379,127 @@ a {
 .primary-btn:hover {
   background: #67b34d;
 
-  transform: translateY(-2px);
+  transform:
+    translateY(-2px);
 }
 
 
+/* =========================================================
+   CATEGORIES
+========================================================= */
 
+.category-wrap {
+  position: relative;
 
-/* =========================
-   FEATURED STORIES
-========================= */
+  z-index: 10;
 
-.content-section {
+  width: 100%;
+
   max-width: 1270px;
 
-  margin: 55px auto;
+  margin:
+    clamp(-32px, -3vw, -20px)
+    auto
+    0;
 
-  padding: 0 20px;
+  padding:
+    0 20px;
 }
+
+.categories {
+  width: 100%;
+
+  min-height:
+    clamp(105px, 10vw, 135px);
+
+  background: #fffdf6;
+
+  border-radius:
+    clamp(16px, 2vw, 22px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, .08);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  overflow: hidden;
+}
+
+
+/* CATEGORY ITEM */
+
+.category {
+  min-height:
+    clamp(105px, 10vw, 135px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border-right:
+    1px solid #deddd4;
+
+  text-align: center;
+
+  transition: .2s ease;
+}
+
+.category:last-child {
+  border-right: none;
+}
+
+.category:hover {
+  background: #f5f6ed;
+}
+
+.category div {
+  font-size:
+    clamp(27px, 3vw, 38px);
+
+  line-height: 1;
+}
+
+.category span {
+  font-size:
+    clamp(11px, 1.1vw, 15px);
+
+  font-weight: 600;
+
+  color: #172b23;
+
+  padding: 0 5px;
+}
+
+
+/* =========================================================
+   FEATURED STORIES
+========================================================= */
+
+.content-section {
+  width: 100%;
+
+  max-width: 1270px;
+
+  margin:
+    clamp(35px, 5vw, 55px)
+    auto;
+
+  padding:
+    0 20px;
+}
+
+
+/* SECTION HEADER */
 
 .section-heading {
   display: flex;
@@ -308,15 +508,19 @@ a {
 
   align-items: center;
 
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .section-heading h2 {
   margin: 0;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: 48px;
+  font-size:
+    clamp(30px, 3.3vw, 44px);
 
   line-height: 1;
 
@@ -324,23 +528,25 @@ a {
 }
 
 .section-heading a {
-  font-size: 15px;
+  font-size: 13px;
 
   font-weight: 700;
 }
 
 
-/* =========================
-   STORY GRID
-========================= */
+/* STORIES LAYOUT */
 
 .stories-layout {
   display: grid;
 
-  grid-template-columns: 2.2fr 1fr;
+  grid-template-columns:
+    2.2fr 1fr;
 
-  gap: 25px;
+  gap: 24px;
 }
+
+
+/* STORY GRID */
 
 .story-grid {
   display: grid;
@@ -348,24 +554,29 @@ a {
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 20px;
+  gap: 18px;
 }
+
+
+/* STORY CARD */
 
 .story-card {
   background: white;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
   overflow: hidden;
 
   box-shadow:
-    0 5px 20px rgba(0,0,0,0.06);
+    0 5px 20px
+    rgba(0, 0, 0, .06);
 }
 
 .story-card img {
   width: 100%;
 
-  height: 180px;
+  height:
+    clamp(130px, 13vw, 180px);
 
   object-fit: cover;
 
@@ -373,31 +584,35 @@ a {
 }
 
 .story-content {
-  padding: 18px;
+  padding: 16px;
 }
 
 .tag {
   display: inline-block;
 
-  padding: 6px 9px;
+  padding: 5px 8px;
 
-  border-radius: 15px;
+  border-radius: 14px;
 
   background: #edf4e9;
 
   color: #39713c;
 
-  font-size: 9px;
+  font-size: 8px;
 
   font-weight: 800;
 }
 
 .story-content h3 {
-  margin: 11px 0 8px;
+  margin:
+    10px 0 7px;
 
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
-  font-size: 20px;
+  font-size:
+    clamp(16px, 1.5vw, 20px);
 
   line-height: 1.15;
 }
@@ -407,45 +622,54 @@ a {
 
   color: #69736c;
 
-  font-size: 12px;
+  font-size:
+    clamp(10px, 1vw, 12px);
 
   line-height: 1.5;
 }
 
 
-/* =========================
+/* =========================================================
    AIM CARD
-========================= */
+========================================================= */
 
 .aim-card {
   background: white;
 
   border-radius: 18px;
 
-  padding: 30px;
+  padding:
+    clamp(20px, 2.5vw, 30px);
 
   box-shadow:
-    0 5px 20px rgba(0,0,0,0.05);
+    0 5px 20px
+    rgba(0, 0, 0, .05);
 }
 
 .aim-leaf {
-  font-size: 35px;
+  font-size: 30px;
 
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .aim-card small {
-  font-size: 10px;
+  font-size: 9px;
 
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
   color: #75917e;
 }
 
 .aim-card h2 {
-  font-family: Georgia, serif;
+  margin:
+    10px 0 15px;
 
-  font-size: 30px;
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(22px, 2.3vw, 30px);
 
   line-height: 1.08;
 }
@@ -455,28 +679,34 @@ a {
 
   line-height: 1.5;
 
-  font-size: 14px;
+  font-size:
+    clamp(12px, 1.1vw, 14px);
 }
 
 
-/* =========================
+/* =========================================================
    QUOTE
-========================= */
+========================================================= */
 
 .quote-section {
+  width: 100%;
+
   max-width: 1270px;
 
-  margin: 80px auto;
+  margin:
+    70px auto;
 
-  padding: 0 20px;
+  padding:
+    0 20px;
 }
 
 .quote {
   background: #eef2e8;
 
-  border-radius: 22px;
+  border-radius: 20px;
 
-  padding: 50px;
+  padding:
+    clamp(30px, 4vw, 50px);
 
   display: flex;
 
@@ -484,7 +714,7 @@ a {
 
   justify-content: center;
 
-  gap: 25px;
+  gap: 20px;
 
   text-align: center;
 }
@@ -492,30 +722,37 @@ a {
 .quote-mark {
   font-family: Georgia, serif;
 
-  font-size: 75px;
+  font-size:
+    clamp(50px, 6vw, 75px);
 
   color: #75a85c;
 }
 
 .quote p {
-  font-family: Georgia, serif;
+  margin:
+    0 0 10px;
 
-  font-size: 27px;
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(18px, 2vw, 27px);
 
   line-height: 1.3;
-
-  margin: 0 0 12px;
 }
 
 
-/* =========================
+/* =========================================================
    ABOUT
-========================= */
+========================================================= */
 
 .about {
   background: #e7eee2;
 
-  padding: 80px 20px;
+  padding:
+    clamp(55px, 7vw, 80px)
+    20px;
 }
 
 .about-inner {
@@ -525,13 +762,17 @@ a {
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
-  gap: 70px;
+  gap:
+    clamp(35px, 6vw, 70px);
+
+  align-items: center;
 }
 
 .about-label {
-  font-size: 11px;
+  font-size: 10px;
 
   letter-spacing: 3px;
 
@@ -539,17 +780,24 @@ a {
 }
 
 .about h2 {
-  font-family: Georgia, serif;
+  margin:
+    15px 0 0;
 
-  font-size: 48px;
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(34px, 4vw, 48px);
 
   line-height: 1.05;
-
-  margin: 15px 0 0;
 }
 
 .about p {
-  font-size: 17px;
+  margin: 0;
+
+  font-size:
+    clamp(14px, 1.4vw, 17px);
 
   line-height: 1.7;
 
@@ -557,14 +805,15 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
   background: #fffef9;
 
-  padding: 45px 20px 25px;
+  padding:
+    40px 20px 20px;
 }
 
 .footer-top {
@@ -577,12 +826,16 @@ footer {
   justify-content: space-between;
 
   align-items: center;
+
+  gap: 30px;
 }
 
 .footer-brand {
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
-  font-size: 28px;
+  font-size: 27px;
 
   font-weight: 700;
 }
@@ -590,31 +843,47 @@ footer {
 .footer-links {
   display: flex;
 
-  gap: 25px;
+  gap: 22px;
 
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.footer-links a:hover {
+  color: #075b32;
 }
 
 .footer-message {
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
   font-style: italic;
 
   text-align: right;
+
+  color: #55705d;
+}
+
+.footer-message strong {
+  color: #075b32;
 }
 
 .footer-bottom {
   max-width: 1270px;
 
-  margin: 30px auto 0;
+  margin:
+    28px auto 0;
 
-  padding-top: 20px;
+  padding-top: 18px;
 
-  border-top: 1px solid #e5e4dc;
+  border-top:
+    1px solid #e5e4dc;
 
   display: flex;
 
   justify-content: space-between;
+
+  gap: 15px;
 
   font-size: 10px;
 
@@ -622,126 +891,243 @@ footer {
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
-@media (max-width: 1100px) {
-
-  .nav-container {
-    padding: 0 35px;
-  }
+@media (max-width: 1050px) {
 
   .brand {
-    flex-basis: 320px;
-  }
-
-  .brand span {
-    font-size: 36px;
+    width: 240px;
   }
 
   .nav {
-    gap: 28px;
+    gap: 20px;
   }
 
   .nav a {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .hero-content {
     padding-left: 80px;
   }
 
+  .stories-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .aim-card {
+    margin-top: 5px;
+  }
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   SMALL TABLET / LARGE MOBILE
+========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 760px) {
+
+  /* HEADER */
 
   .header {
-    height: 82px;
+    height: 76px;
   }
 
   .nav-container {
-    padding: 0 20px;
+    padding:
+      0 20px;
   }
 
   .brand {
+    width: auto;
     flex: 1;
   }
 
   .brand span {
-    font-size: 27px;
+    font-size: 28px;
   }
 
   .nav {
     display: none;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+
+
+  /* HERO */
+
   .hero {
-    height: 570px;
+    height: 500px;
+  }
+
+  .hero-background {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7,35,29,.94) 0%,
+        rgba(7,45,34,.72) 55%,
+        rgba(7,45,34,.25) 100%
+      ),
+
+      url(
+        "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=90"
+      )
+
+      65% center / cover no-repeat;
   }
 
   .hero-content {
-    padding: 60px 25px 0;
+    padding:
+      55px 25px 0;
   }
 
   .eyebrow {
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: 4px;
+
+    margin-bottom: 17px;
   }
 
   .hero h1 {
-    font-size: 58px;
+    font-size: 56px;
 
     letter-spacing: -3px;
+
+    line-height: .94;
   }
 
   .hero p {
-    font-size: 17px;
+    font-size: 16px;
+
+    max-width: 390px;
+  }
+
+  .hero p br {
+    display: none;
   }
 
   .primary-btn {
-    font-size: 15px;
+    padding:
+      14px 22px;
 
-    padding: 15px 25px;
+    font-size: 14px;
   }
 
+
+  /* CATEGORIES */
+
   .category-wrap {
-    margin-top: -35px;
+    margin-top: -25px;
+
+    padding:
+      0 15px;
   }
 
   .categories {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    border-radius: 17px;
   }
 
   .category {
-    min-height: 120px;
+    min-height: 105px;
   }
 
-  .category:nth-child(2n) {
+  .category:nth-child(2) {
     border-right: none;
   }
 
-  .section-heading h2 {
-    font-size: 36px;
+  .category:nth-child(3) {
+    border-top:
+      1px solid #deddd4;
   }
 
-  .stories-layout {
-    grid-template-columns: 1fr;
+  .category:nth-child(4) {
+    border-top:
+      1px solid #deddd4;
+
+    border-right: none;
+  }
+
+  .category:nth-child(5) {
+    grid-column:
+      1 / -1;
+
+    border-top:
+      1px solid #deddd4;
+
+    border-right: none;
+  }
+
+
+  /* STORIES */
+
+  .content-section {
+    padding:
+      0 15px;
+
+    margin:
+      40px auto;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
   }
 
   .story-grid {
     grid-template-columns: 1fr;
   }
 
+  .story-card img {
+    height: 210px;
+  }
+
+
+  /* QUOTE */
+
+  .quote-section {
+    padding:
+      0 15px;
+
+    margin:
+      50px auto;
+  }
+
+  .quote {
+    padding: 35px 20px;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .quote-mark {
+    font-size: 55px;
+
+    line-height: .7;
+  }
+
+  .quote p {
+    font-size: 20px;
+  }
+
+
+  /* ABOUT */
+
   .about-inner {
     grid-template-columns: 1fr;
+
+    gap: 25px;
   }
+
+
+  /* FOOTER */
 
   .footer-top {
     flex-direction: column;
@@ -751,6 +1137,12 @@ footer {
     gap: 25px;
   }
 
+  .footer-links {
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
   .footer-message {
     text-align: left;
   }
@@ -758,21 +1150,98 @@ footer {
   .footer-bottom {
     flex-direction: column;
 
-    gap: 10px;
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .brand span {
+    font-size: 25px;
+  }
+
+  .hero {
+    height: 480px;
+  }
+
+  .hero-content {
+    padding:
+      48px 20px 0;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 15px;
+
+    margin:
+      17px 0 20px;
+  }
+
+  .category span {
+    font-size: 11px;
+  }
+
+  .category div {
+    font-size: 27px;
+  }
+
+  .section-heading h2 {
+    font-size: 29px;
+  }
+
+  .section-heading a {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .brand span {
+    font-size: 22px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+  .category span {
+    font-size: 10px;
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
 <header class="header">
 
@@ -781,6 +1250,7 @@ footer {
     <a href="/" class="brand">
       <span>CIBUS LORE</span>
     </a>
+
 
     <nav class="nav">
 
@@ -806,15 +1276,54 @@ footer {
 
     </nav>
 
+
+    <button
+      class="menu-toggle"
+      aria-label="Open menu"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
+
   </div>
+
+
+  <!-- MOBILE NAV -->
+
+  <nav
+    id="mobileNav"
+    class="mobile-nav"
+  >
+
+    <a href="/">
+      Home
+    </a>
+
+    <a href="#categories">
+      Categories
+    </a>
+
+    <a href="#stories">
+      Articles
+    </a>
+
+    <a href="#stories">
+      Food Stories
+    </a>
+
+    <a href="#about">
+      About
+    </a>
+
+  </nav>
 
 </header>
 
 
 
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <main>
 
@@ -822,25 +1331,37 @@ footer {
 
   <div class="hero-background"></div>
 
+
   <div class="hero-content">
 
     <div class="eyebrow">
       GOOD FOOD&nbsp;&nbsp;&nbsp;&nbsp; BRIGHTER LIVES
     </div>
 
+
     <h1>
       Every Food<br>
       Has a <em>Story.</em>
     </h1>
+
 
     <p>
       From farms to your table — explore the people,<br>
       places and journeys behind what we eat.
     </p>
 
-    <a href="#stories" class="primary-btn">
+
+    <a
+      href="#stories"
+      class="primary-btn"
+    >
+
       Start Exploring
-      <span>→</span>
+
+      <span>
+        →
+      </span>
+
     </a>
 
   </div>
@@ -849,16 +1370,112 @@ footer {
 
 
 
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section
+  class="category-wrap"
+  id="categories"
+>
+
+  <div class="categories">
 
 
-<!-- =========================
+    <a
+      href="#"
+      class="category"
+    >
+
+      <div>
+        🍎
+      </div>
+
+      <span>
+        Fruits
+      </span>
+
+    </a>
+
+
+    <a
+      href="#"
+      class="category"
+    >
+
+      <div>
+        🌰
+      </div>
+
+      <span>
+        Nuts & Dry Fruits
+      </span>
+
+    </a>
+
+
+    <a
+      href="#"
+      class="category"
+    >
+
+      <div>
+        🌱
+      </div>
+
+      <span>
+        Seeds
+      </span>
+
+    </a>
+
+
+    <a
+      href="#"
+      class="category"
+    >
+
+      <div>
+        🥬
+      </div>
+
+      <span>
+        Vegetables
+      </span>
+
+    </a>
+
+
+    <a
+      href="#"
+      class="category"
+    >
+
+      <div>
+        🌾
+      </div>
+
+      <span>
+        Grains
+      </span>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
      FEATURED STORIES
-========================= -->
+========================================================= -->
 
 <section
   class="content-section"
   id="stories"
 >
+
 
   <div class="section-heading">
 
@@ -873,7 +1490,9 @@ footer {
   </div>
 
 
+
   <div class="stories-layout">
+
 
     <div class="story-grid">
 
@@ -885,6 +1504,7 @@ footer {
         <img
           src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=85"
           alt="Apple"
+          loading="lazy"
         >
 
         <div class="story-content">
@@ -915,6 +1535,7 @@ footer {
         <img
           src="https://images.unsplash.com/photo-1508061253366-f7da158b6d3a?auto=format&fit=crop&w=800&q=85"
           alt="Almonds"
+          loading="lazy"
         >
 
         <div class="story-content">
@@ -945,6 +1566,7 @@ footer {
         <img
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85"
           alt="Farm"
+          loading="lazy"
         >
 
         <div class="story-content">
@@ -970,6 +1592,7 @@ footer {
     </div>
 
 
+
     <!-- AIM CARD -->
 
     <aside class="aim-card">
@@ -983,158 +1606,4 @@ footer {
       </small>
 
       <h2>
-        A Healthier<br>
-        Planet Through<br>
-        Better Food
-      </h2>
-
-      <p>
-        We tell the real stories behind food —
-        for a healthier you and a brighter planet.
-      </p>
-
-    </aside>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     QUOTE
-========================= -->
-
-<section class="quote-section">
-
-  <div class="quote">
-
-    <span class="quote-mark">
-      “
-    </span>
-
-    <div>
-
-      <p>
-        Food is not just what we eat,<br>
-        but a story of people, nature and time.
-      </p>
-
-      <small>
-        — CIBUS LORE
-      </small>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section
-  class="about"
-  id="about"
->
-
-  <div class="about-inner">
-
-    <div>
-
-      <span class="about-label">
-        THE CIBUS LORE MISSION
-      </span>
-
-      <h2>
-        Every ingredient<br>
-        has a journey.
-      </h2>
-
-    </div>
-
-
-    <p>
-
-      CIBUS LORE is a place to discover
-      the stories behind the food we see
-      every day — where it comes from,
-      who grows it, how it travels and
-      why it matters.
-
-    </p>
-
-  </div>
-
-</section>
-
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <div class="footer-top">
-
-    <a href="/" class="footer-brand">
-      CIBUS LORE
-    </a>
-
-    <div class="footer-links">
-
-      <a href="/">
-        Home
-      </a>
-
-      <a href="#categories">
-        Categories
-      </a>
-
-      <a href="#stories">
-        Articles
-      </a>
-
-      <a href="#about">
-        About
-      </a>
-
-    </div>
-
-
-    <div class="footer-message">
-
-      Good Food<br>
-
-      <strong>
-        Brighter Lives
-      </strong>
-
-    </div>
-
-  </div>
-
-
-  <div class="footer-bottom">
-
-    <span>
-      © 2026 CIBUS LORE. All rights reserved.
-    </span>
-
-    <span>
-      People • Plants • Places • Food • Stories
-    </span>
-
-  </div>
-
-</footer>
-
-
-</body>
-</html>
+        A Healthier
