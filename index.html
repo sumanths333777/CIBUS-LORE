@@ -1535,16 +1535,14 @@ async function loadLatestArticle() {
     .order("created_at", { ascending: false })
     .limit(1)
     .single();
+   
+if (error) {
+  document.getElementById("latest-description").textContent =
+    "ERROR: " + error.message;
 
-  if (error) {
-
-     document.getElementByid("latest-descripti
-     on").textContent =
-      "ERROR:" + error.message;
-    console.error("Could not load article:", 
-    error);
-     return;
-  }
+  console.error("Could not load article:", error);
+  return;
+}
 
   document.getElementById("latest-title").textContent = data.title;
   document.getElementById("latest-description").textContent = data.description;
