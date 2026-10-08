@@ -444,82 +444,101 @@
   }
 
 
-  /* HEADER */
+ /* ================= HEADER ================= */
 
-  .header {
-    position: relative;
-    z-index: 20;
-    background: #fffef9;
-    border-bottom: 1px solid #e8e5dc;
-  }
+.header {
+  position: relative;
+  z-index: 20;
+  background: #fffef9;
+  border-bottom: 1px solid #e8e5dc;
+}
 
-  .nav-container {
-    max-width: 1440px;
-    height: 88px;
-    margin: auto;
-    padding: 0 45px;
-    display: flex;
-    align-items: center;
-    gap: 35px;
-  }
+.nav-container {
+  max-width: 1440px;
+  height: 88px;
+  margin: 0 auto;
+  padding: 0 45px;
 
-  .brand {
-    width: 280px;
-    min-width: 280px;
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
 
-  .brand img {
-    width: 250px;
-    height: auto;
-    display: block;
-  }
+/* CIBUS LORE BRAND */
 
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    flex: 1;
-  }
+.brand {
+  flex: 0 0 280px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
 
-  .nav a {
-    font-size: 14px;
-    font-weight: 600;
-    color: #31443a;
-    padding: 33px 0 27px;
-    border-bottom: 2px solid transparent;
-  }
+.brand span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  display: block;
+  color: #153b29;
+}
 
-  .nav a:hover,
-  .nav a.active {
-    color: #075b32;
-    border-bottom-color: #075b32;
-  }
+/* NAVIGATION */
 
-  .search {
-    width: 260px;
-    height: 43px;
-    border: 1px solid #deddd5;
-    border-radius: 30px;
-    background: #faf9f3;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    gap: 8px;
-  }
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+}
 
-  .search span {
-    font-size: 22px;
-  }
+.nav a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  color: #31443a;
 
-  .search input {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    font-size: 12px;
-  }
+  padding: 34px 0 28px;
+
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #075b32;
+  border-bottom-color: #075b32;
+}
+
+/* SEARCH */
+
+.search {
+  flex: 0 0 260px;
+  height: 43px;
+
+  border: 1px solid #deddd5;
+  border-radius: 30px;
+  background: #faf9f3;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+  gap: 8px;
+}
+
+.search span {
+  font-size: 22px;
+}
+
+.search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 12px;
+  font-family: inherit;
+}
 
 
   /* HERO */
