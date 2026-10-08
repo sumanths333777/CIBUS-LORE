@@ -1278,10 +1278,10 @@ footer {
           </span>
 
           <h3>
-            The Journey of an Apple
+          id="latest-title">The Journey of an Apple</
           </h3>
 
-          <p>
+          <p> id="latest-description">
             From orchard to your plate —
             a story of care, climate and community.
           </p>
@@ -1526,6 +1526,28 @@ const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_ANON_KEY
 );
+</script>
+
+<script>
+async function loadLatestArticle() {
+
+  const { data, error } = await supabaseClient
+    .from("articles")
+    .select("title, description")
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .single();
+
+  if (error) {
+    console.error("Could not load article:", error);
+    return;
+  }
+
+  document.getElementById("latest-title").textContent = data.title;
+  document.getElementById("latest-description").textContent = data.description;
+}
+
+loadLatestArticle();
 </script>
    
 </body>
