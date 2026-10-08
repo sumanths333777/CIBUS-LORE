@@ -133,16 +133,17 @@ async function loadArticle() {
     .eq("slug", slug)
     .single();
 
-  if (error || !data) {
-    articleBox.innerHTML = `
-      <div class="message">
-        Article not found.
-      </div>
-    `;
-    console.error(error);
-    return;
-  }
+if (error || !data) {
+  articleBox.innerHTML = `
+    <div class="message">
+      Article error: ${error ? error.message : "No article found"}
+    </div>
+  `;
+  console.error(error);
+  return;
+}
 
+  
   document.title = "CIBUS LORE — " + data.title;
 
   articleBox.innerHTML = `
