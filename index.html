@@ -55,54 +55,86 @@ a {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+
   padding: 0 58px;
+
   display: flex;
   align-items: center;
 }
 
+
+/* CIBUS LORE */
+
 .brand {
   flex: 0 0 390px;
+
   display: flex;
   align-items: center;
 }
 
 .brand span {
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 42px;
   line-height: 1;
+
   font-weight: 700;
+
   letter-spacing: -1px;
+
   color: #102d22;
+
   white-space: nowrap;
 }
+
+
+/* NAV */
 
 .nav {
   display: flex;
   align-items: center;
+
   gap: 55px;
+
   height: 100%;
 }
 
 .nav a {
   position: relative;
+
   height: 100%;
+
   display: flex;
   align-items: center;
+
   padding-top: 4px;
+
   font-size: 18px;
+
   font-weight: 600;
+
   color: #172d25;
+
   white-space: nowrap;
 }
 
+
+/* ACTIVE UNDERLINE */
+
 .nav a.active::after {
   content: "";
+
   position: absolute;
+
   left: 0;
   right: 0;
+
   bottom: 18px;
+
   height: 4px;
+
   background: #6fa95a;
+
   border-radius: 2px;
 }
 
@@ -117,13 +149,20 @@ a {
 
 .hero {
   height: 640px;
+
   position: relative;
+
   overflow: hidden;
+
   color: white;
 }
 
+
+/* BACKGROUND */
+
 .hero-background {
   position: absolute;
+
   inset: 0;
 
   background:
@@ -139,133 +178,196 @@ a {
     center center / cover no-repeat;
 }
 
+
+/* HERO CONTENT */
+
 .hero-content {
   position: relative;
+
   z-index: 3;
+
   max-width: 1440px;
+
   height: 100%;
+
   margin: 0 auto;
+
   padding-left: 145px;
+
   padding-top: 78px;
 }
 
+
+/* EYEBROW */
+
 .eyebrow {
   font-size: 17px;
+
   letter-spacing: 9px;
+
   font-weight: 500;
+
   margin-bottom: 32px;
+
   color: #f4f3e9;
 }
 
+
+/* MAIN TITLE */
+
 .hero h1 {
   margin: 0;
+
   font-family: Georgia, "Times New Roman", serif;
 
-  /* responsive dimension only */
-  font-size: clamp(58px, 6.2vw, 104px);
+  font-size: clamp(70px, 6.2vw, 104px);
 
   line-height: 0.92;
+
   letter-spacing: -5px;
+
   font-weight: 700;
+
   color: #fffdf5;
 }
 
 .hero h1 em {
   color: #83d461;
+
   font-style: normal;
 }
+
+
+/* DESCRIPTION */
 
 .hero p {
   margin: 28px 0 30px;
 
-  /* responsive dimension only */
-  font-size: clamp(17px, 1.75vw, 25px);
+  font-size: 25px;
 
   line-height: 1.45;
+
   color: #f3f4ef;
 }
 
+
+/* BUTTON */
+
 .primary-btn {
   display: inline-flex;
+
   align-items: center;
+
   gap: 32px;
+
   background: #78c45c;
+
   color: white;
+
   padding: 19px 34px;
 
-  /* responsive dimension only */
-  font-size: clamp(14px, 1.3vw, 18px);
-
   border-radius: 40px;
+
+  font-size: 18px;
+
   font-weight: 700;
+
   transition: 0.25s ease;
 }
 
 .primary-btn span {
   font-size: 28px;
+
   line-height: 0;
 }
 
 .primary-btn:hover {
   background: #67b34d;
+
   transform: translateY(-2px);
 }
 
 
 /* =========================
    FEATURED STORIES
-   ORIGINAL UI
 ========================= */
 
 .content-section {
   max-width: 1270px;
+
   margin: 55px auto;
+
   padding: 0 20px;
 }
 
 .section-heading {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   margin-bottom: 28px;
 }
 
 .section-heading h2 {
   margin: 0;
+
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 48px;
+
   line-height: 1;
+
   color: #163b2d;
 }
 
 .section-heading a {
   font-size: 15px;
+
   font-weight: 700;
 }
 
+
+/* =========================
+   STORY GRID
+========================= */
+
 .stories-layout {
   display: grid;
+
   grid-template-columns: 2.2fr 1fr;
+
   gap: 25px;
 }
 
 .story-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 20px;
 }
 
 .story-card {
   background: white;
+
   border-radius: 18px;
+
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.06);
 }
 
 .story-card img {
   width: 100%;
+
   height: 180px;
+
   object-fit: cover;
+
   display: block;
 }
 
@@ -275,190 +377,253 @@ a {
 
 .tag {
   display: inline-block;
+
   padding: 6px 9px;
+
   border-radius: 15px;
+
   background: #edf4e9;
+
   color: #39713c;
+
   font-size: 9px;
+
   font-weight: 800;
 }
 
 .story-content h3 {
   margin: 11px 0 8px;
+
   font-family: Georgia, serif;
+
   font-size: 20px;
+
   line-height: 1.15;
 }
 
 .story-content p {
   margin: 0;
+
   color: #69736c;
+
   font-size: 12px;
+
   line-height: 1.5;
 }
 
 
 /* =========================
    AIM CARD
-   ORIGINAL UI
 ========================= */
 
 .aim-card {
   background: white;
+
   border-radius: 18px;
+
   padding: 30px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.05);
 }
 
 .aim-leaf {
   font-size: 35px;
+
   margin-bottom: 15px;
 }
 
 .aim-card small {
   font-size: 10px;
+
   letter-spacing: 3px;
+
   color: #75917e;
 }
 
 .aim-card h2 {
   font-family: Georgia, serif;
+
   font-size: 30px;
+
   line-height: 1.08;
 }
 
 .aim-card p {
   color: #68736d;
+
   line-height: 1.5;
+
   font-size: 14px;
 }
 
 
 /* =========================
    QUOTE
-   ORIGINAL UI
 ========================= */
 
 .quote-section {
   max-width: 1270px;
+
   margin: 80px auto;
+
   padding: 0 20px;
 }
 
 .quote {
   background: #eef2e8;
+
   border-radius: 22px;
+
   padding: 50px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 25px;
+
   text-align: center;
 }
 
 .quote-mark {
   font-family: Georgia, serif;
+
   font-size: 75px;
+
   color: #75a85c;
 }
 
 .quote p {
   font-family: Georgia, serif;
+
   font-size: 27px;
+
   line-height: 1.3;
+
   margin: 0 0 12px;
 }
 
 
 /* =========================
    ABOUT
-   ORIGINAL UI
 ========================= */
 
 .about {
   background: #e7eee2;
+
   padding: 80px 20px;
 }
 
 .about-inner {
   max-width: 1200px;
+
   margin: auto;
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 70px;
 }
 
 .about-label {
   font-size: 11px;
+
   letter-spacing: 3px;
+
   color: #65806c;
 }
 
 .about h2 {
   font-family: Georgia, serif;
+
   font-size: 48px;
+
   line-height: 1.05;
+
   margin: 15px 0 0;
 }
 
 .about p {
   font-size: 17px;
+
   line-height: 1.7;
+
   color: #58675e;
 }
 
 
 /* =========================
    FOOTER
-   ORIGINAL UI
 ========================= */
 
 footer {
   background: #fffef9;
+
   padding: 45px 20px 25px;
 }
 
 .footer-top {
   max-width: 1270px;
+
   margin: auto;
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 }
 
 .footer-brand {
   font-family: Georgia, serif;
+
   font-size: 28px;
+
   font-weight: 700;
 }
 
 .footer-links {
   display: flex;
+
   gap: 25px;
+
   font-size: 13px;
 }
 
 .footer-message {
   font-family: Georgia, serif;
+
   font-style: italic;
+
   text-align: right;
 }
 
 .footer-bottom {
   max-width: 1270px;
+
   margin: 30px auto 0;
+
   padding-top: 20px;
+
   border-top: 1px solid #e5e4dc;
+
   display: flex;
+
   justify-content: space-between;
+
   font-size: 10px;
+
   color: #7b827d;
 }
 
 
 /* =========================================================
    LAPTOP
-   ONLY DIMENSIONS
+   SAME UI — ONLY SCALE DIMENSIONS
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -487,12 +652,20 @@ footer {
     padding-left: 80px;
   }
 
+  .hero h1 {
+    font-size: clamp(60px, 6vw, 90px);
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
 }
 
 
 /* =========================================================
    MOBILE
-   ONLY RESPONSIVE DIMENSIONS
+   SAME UI — COMPACT PROPORTIONS
 ========================================================= */
 
 @media (max-width: 800px) {
@@ -523,36 +696,61 @@ footer {
   /* HERO */
 
   .hero {
-    height: 570px;
+    height: 430px;
+  }
+
+  /*
+     On mobile the image stays within the hero
+     instead of becoming a giant vertical crop.
+  */
+
+  .hero-background {
+    background-position: 68% center;
+    background-size: auto 100%;
   }
 
   .hero-content {
-    padding: 60px 25px 0;
+    padding: 48px 25px 0;
   }
 
   .eyebrow {
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 4px;
+    margin-bottom: 22px;
   }
 
   .hero h1 {
-    font-size: 58px;
+    font-size: 50px;
+    line-height: .94;
     letter-spacing: -3px;
   }
 
   .hero p {
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 20px 0 23px;
+    max-width: 370px;
+  }
+
+  .hero p br {
+    display: none;
   }
 
   .primary-btn {
-    font-size: 15px;
-    padding: 15px 25px;
+    font-size: 14px;
+    padding: 14px 23px;
+    gap: 22px;
+  }
+
+  .primary-btn span {
+    font-size: 23px;
   }
 
 
   /* FEATURED STORIES */
 
   .content-section {
+    margin: 55px auto;
     padding: 0 20px;
   }
 
@@ -597,106 +795,90 @@ footer {
 
 
 /* =========================================================
-   SMALL PHONES
-   ONLY DIMENSIONS
+   SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 480px) {
 
-  .brand span {
-    font-size: 24px;
+  .header {
+    height: 76px;
   }
 
+  .nav-container {
+    padding: 0 18px;
+  }
+
+  .brand span {
+    font-size: 25px;
+  }
+
+
+  /* HERO */
+
   .hero {
-    height: 500px;
+    height: 405px;
+  }
+
+  .hero-background {
+    background-position: 70% center;
+    background-size: auto 100%;
   }
 
   .hero-content {
-    padding: 48px 22px 0;
+    padding: 42px 22px 0;
   }
 
   .eyebrow {
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 3px;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
   }
 
   .hero h1 {
-    font-size: 45px;
+    font-size: 43px;
     letter-spacing: -2px;
   }
 
   .hero p {
-    font-size: 15px;
-    margin: 22px 0 25px;
-  }
-
-  .hero p br {
-    display: none;
+    font-size: 14px;
+    margin: 18px 0 20px;
+    max-width: 330px;
   }
 
   .primary-btn {
     font-size: 13px;
-    padding: 13px 21px;
+    padding: 12px 20px;
     gap: 18px;
   }
 
   .primary-btn span {
-    font-size: 22px;
+    font-size: 21px;
   }
 
 
-  /*
-     Bottom sections:
-     only make text/width fit the phone.
-     No redesign.
-  */
+  /* BOTTOM UI — ONLY FIT WIDTH */
 
   .content-section {
     padding: 0 15px;
   }
 
   .section-heading h2 {
-    font-size: 30px;
+    font-size: 31px;
+  }
+
+  .section-heading a {
+    font-size: 12px;
   }
 
   .story-card img {
     height: 180px;
   }
 
-  .quote-section {
-    padding: 0 15px;
-  }
-
-  .quote {
-    padding: 35px 20px;
-  }
-
-  .quote p {
-    font-size: 20px;
-  }
-
-  .quote-mark {
-    font-size: 60px;
-  }
-
-  .about {
-    padding: 65px 20px;
-  }
-
-  .about h2 {
-    font-size: 40px;
-  }
-
-  .about p {
-    font-size: 15px;
-  }
-
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   VERY SMALL PHONE
 ========================================================= */
 
 @media (max-width: 360px) {
@@ -705,17 +887,21 @@ footer {
     font-size: 22px;
   }
 
-  .hero h1 {
-    font-size: 40px;
-  }
-
-  .eyebrow {
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
-
   .hero {
-    height: 470px;
+    height: 390px;
+  }
+
+  .hero-content {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .hero p {
+    font-size: 13px;
   }
 
 }
@@ -803,7 +989,6 @@ footer {
   </div>
 
 </section>
-
 
 
 
