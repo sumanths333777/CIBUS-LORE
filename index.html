@@ -768,21 +768,37 @@ footer {
 
 }
 
+/* =========================================================
+   PREMIUM MOBILE CIBUS LORE
+   DESKTOP REMAINS UNCHANGED
+========================================================= */
 
-/* =========================
-   MOBILE
-========================= */
+.mobile-menu {
+  display: none;
+}
+
 
 @media (max-width: 700px) {
 
-  /* HEADER */
+  /* =========================
+     HEADER
+  ========================= */
 
   .header {
-    height: 108px;
+    height: 105px;
+
+    background: #fffef9;
+
+    border-bottom: 1px solid #e7e4dc;
   }
 
   .nav-container {
+    height: 100%;
+
     padding: 0 25px;
+
+    display: flex;
+    align-items: center;
   }
 
   .brand {
@@ -790,14 +806,641 @@ footer {
   }
 
   .brand span {
-    font-size: 36px;
-    letter-spacing: -1.2px;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -1.4px;
+
+    color: #123a2b;
+
+    white-space: nowrap;
   }
 
   .nav {
     display: none;
   }
 
+
+  /* MOBILE MENU */
+
+  .mobile-menu {
+
+    display: flex;
+
+    width: 54px;
+    height: 54px;
+
+    margin-left: auto;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f0e7;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 0;
+  }
+
+  .mobile-menu span {
+
+    width: 25px;
+    height: 3px;
+
+    border-radius: 3px;
+
+    background: #123a2b;
+
+    display: block;
+  }
+
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+
+    height: 950px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+  }
+
+
+  /* BOTANICAL BACKGROUND */
+
+  .hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 30, 23, 0.98) 0%,
+        rgba(4, 34, 26, 0.91) 30%,
+        rgba(5, 39, 29, 0.60) 57%,
+        rgba(5, 39, 29, 0.13) 100%
+      ),
+
+      url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=90")
+      69% center / cover no-repeat;
+  }
+
+
+  /* SOFT LIGHT */
+
+  .hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+      radial-gradient(
+        circle at 84% 30%,
+        rgba(237,246,222,0.32),
+        transparent 36%
+      );
+  }
+
+
+  /* =========================
+     HERO CONTENT
+  ========================= */
+
+  .hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    height: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+      72px 42px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+  }
+
+
+  /* =========================
+     EYEBROW
+  ========================= */
+
+  .eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    font-weight: 600;
+
+    margin-bottom: 31px;
+
+    color: rgba(255,255,255,0.92);
+
+    white-space: nowrap;
+  }
+
+  .eyebrow::before {
+
+    content: "";
+
+    width: 43px;
+
+    height: 3px;
+
+    background: #83d461;
+
+    border-radius: 3px;
+
+    display: inline-block;
+
+    flex-shrink: 0;
+  }
+
+
+  /* =========================
+     MAIN TITLE
+  ========================= */
+
+  .hero h1 {
+
+    max-width: 560px;
+
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 66px;
+
+    line-height: 0.91;
+
+    letter-spacing: -3.8px;
+
+    font-weight: 700;
+
+    color: #fffdf5;
+  }
+
+  .hero h1 em {
+
+    color: #83d461;
+
+    font-style: normal;
+  }
+
+
+  /* =========================
+     DESCRIPTION
+  ========================= */
+
+  .hero p {
+
+    max-width: 450px;
+
+    margin: 31px 0 30px;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: rgba(248,249,244,0.94);
+  }
+
+  .hero p br {
+    display: none;
+  }
+
+
+  /* =========================
+     CTA
+  ========================= */
+
+  .primary-btn {
+
+    width: 300px;
+
+    height: 64px;
+
+    min-width: 0;
+
+    padding:
+      0 12px 0 27px;
+
+    border-radius: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #78c95a;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    box-shadow:
+      0 14px 32px rgba(0,0,0,0.20);
+
+    transition:
+      transform .25s ease,
+      background .25s ease;
+  }
+
+  .primary-btn:hover {
+
+    background: #6fba52;
+
+    transform: translateY(-2px);
+  }
+
+  .primary-btn span {
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+      rgba(255,255,255,0.20);
+
+    font-size: 29px;
+
+    line-height: 1;
+  }
+
+
+  /* =========================
+     LOWER EDITORIAL IDENTITY
+  ========================= */
+
+  .hero::before {
+
+    content:
+      "PEOPLE\A PLANTS\A PLACES\A FOOD\A STORIES";
+
+    white-space: pre;
+
+    position: absolute;
+
+    z-index: 4;
+
+    left: 218px;
+
+    bottom: 108px;
+
+    color: rgba(246,250,239,0.72);
+
+    font-size: 11px;
+
+    line-height: 2.12;
+
+    letter-spacing: 4px;
+
+    font-weight: 500;
+  }
+
+
+  /* GREEN LINE ABOVE LIST */
+
+  .hero-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 218px;
+
+    bottom: 252px;
+
+    width: 36px;
+
+    height: 3px;
+
+    background: #83d461;
+
+    border-radius: 4px;
+  }
+
+
+  /* LEAF CIRCLE */
+
+  .hero-content::before {
+
+    content: "🌿";
+
+    position: absolute;
+
+    z-index: 4;
+
+    left: 42px;
+
+    bottom: 102px;
+
+    width: 125px;
+
+    height: 125px;
+
+    border:
+
+      1px solid
+
+      rgba(220,239,199,0.42);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    color: #83d461;
+
+    opacity: 0.85;
+  }
+}
+
+
+/* =========================================================
+   480px AND BELOW
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .header {
+
+    height: 105px;
+  }
+
+  .nav-container {
+
+    padding: 0 22px;
+  }
+
+  .brand span {
+
+    font-size: 34px;
+
+    letter-spacing: -1.4px;
+  }
+
+  .mobile-menu {
+
+    width: 50px;
+    height: 50px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+
+    height: 900px;
+  }
+
+  .hero-background {
+
+    background-position: 68% center;
+  }
+
+  .hero-content {
+
+    padding:
+      69px 30px 40px;
+  }
+
+
+  /* EYEBROW */
+
+  .eyebrow {
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+  }
+
+  .eyebrow::before {
+
+    width: 31px;
+
+    height: 2px;
+  }
+
+
+  /* TITLE */
+
+  .hero h1 {
+
+    font-size: 57px;
+
+    line-height: 0.92;
+
+    letter-spacing: -3.2px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .hero p {
+
+    font-size: 16px;
+
+    line-height: 1.52;
+
+    margin:
+      27px 0 28px;
+
+    max-width: 390px;
+  }
+
+
+  /* BUTTON */
+
+  .primary-btn {
+
+    width: 280px;
+
+    height: 60px;
+
+    padding-left: 24px;
+
+    font-size: 16px;
+  }
+
+  .primary-btn span {
+
+    width: 44px;
+
+    height: 44px;
+
+    font-size: 26px;
+  }
+
+
+  /* LOWER IDENTITY */
+
+  .hero::before {
+
+    left: 190px;
+
+    bottom: 80px;
+
+    font-size: 9px;
+
+    line-height: 2.05;
+
+    letter-spacing: 3.5px;
+  }
+
+  .hero-content::after {
+
+    left: 190px;
+
+    bottom: 215px;
+
+    width: 30px;
+
+    height: 2px;
+  }
+
+  .hero-content::before {
+
+    left: 18px;
+
+    bottom: 73px;
+
+    width: 130px;
+
+    height: 130px;
+
+    font-size: 28px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .header {
+
+    height: 100px;
+  }
+
+  .brand span {
+
+    font-size: 30px;
+  }
+
+  .hero {
+
+    height: 850px;
+  }
+
+  .hero-content {
+
+    padding-left: 22px;
+
+    padding-right: 22px;
+  }
+
+  .hero h1 {
+
+    font-size: 50px;
+
+    letter-spacing: -2.8px;
+  }
+
+  .hero p {
+
+    font-size: 15px;
+  }
+
+  .primary-btn {
+
+    width: 260px;
+  }
+
+  .hero::before {
+
+    left: 160px;
+
+    bottom: 70px;
+  }
+
+  .hero-content::after {
+
+    left: 160px;
+
+    bottom: 205px;
+  }
+}
+<button class="mobile-menu" aria-label="Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+   
 
   /* HERO */
 
@@ -1202,7 +1845,12 @@ footer {
   .nav {
     display: none;
   }
-
+<button class="mobile-menu" aria-label="Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+   
   /* PREMIUM MOBILE MENU */
 
   .mobile-menu {
