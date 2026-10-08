@@ -104,7 +104,21 @@ button:hover {
 </head>
 
 <body>
+<div id="loginBox" style="max-width:450px;margin:80px auto;padding:35px;background:white;border-radius:18px;box-shadow:0 5px 25px rgba(0,0,0,.06);">
+  <h2>Admin Login</h2>
 
+  <label>Email</label>
+  <input id="loginEmail" type="email" placeholder="Your email">
+
+  <label>Password</label>
+  <input id="loginPassword" type="password" placeholder="Your password">
+
+  <button onclick="loginAdmin()">Login</button>
+
+  <div id="loginMessage"></div>
+</div>
+  
+  
 <div id="loginBox" style="max-width:450px;margin:80px auto;padding:35px;background:white;border-radius:18px;box-shadow:0 5px 25px rgba(0,0,0,.06);">
   <h2>Admin Login</h2>
 
@@ -178,6 +192,49 @@ const supabaseClient = supabase.createClient(
   SUPABASE_ANON_KEY
 );
 
+  async function loginAdmin() {
+
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value;
+  const message = document.getElementById("loginMessage");
+
+  if (!email || !password) {
+    message.textContent = "Please enter email and password.";
+    message.style.color = "#b33a3a";
+    return;
+  }
+
+  message.textContent = "Logging in...";
+
+  const { error } = await supabaseClient.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    message.textContent = error.message;
+    message.style.color = "#b33a3a";
+    return;
+  }
+
+  message.textContent = "Login successful! 🎉";
+  message.style.color = "#39713c";
+
+  document.getElementById("loginBox").style.display = "none";
+  document.querySelector(".container").style.display = "block";
+}
+
+supabaseClient.auth.getSession().then(({ data }) => {
+
+  if (data.session) {
+    document.getElementById("loginBox").style.display = "none";
+    document.querySelector(".container").style.display = "block";
+  } else {
+    document.querySelector(".container").style.display = "none";
+  }
+
+});
+  
 async function publishArticle() {
 
   const title = document.getElementById("title").value.trim();
