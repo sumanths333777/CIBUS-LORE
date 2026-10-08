@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>CIBUS LORE — Article</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f8f6ee;
+      color: #26352b;
+      font-family: Georgia, serif;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #eee;
+      padding: 25px 45px;
+    }
+
+    .logo {
+      font-size: 32px;
+      color: #26352b;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 70px auto;
+      padding: 0 25px;
+    }
+
+    .tag {
+      color: #65b94d;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    .description {
+      font-size: 21px;
+      color: #68736b;
+      line-height: 1.6;
+      margin-bottom: 45px;
+    }
+
+    .content {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.9;
+      color: #37443b;
+      white-space: pre-wrap;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+      color: #65b94d;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .message {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #68736b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">CIBUS LORE</a>
+</header>
+
+<main>
+
+  <div id="article">
+    <div class="message">Loading article...</div>
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL = "https://ssyxewjbeuldapinovmt.supabase.co";
+
+const SUPABASE_ANON_KEY = "YOUR_PUBLISHABLE_KEY_HERE";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+
+async function loadArticle() {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const slug = params.get("slug");
+
+  const articleBox = document.getElementById("article");
+
+  if (!slug) {
+    articleBox.innerHTML = `
+      <div class="message">
+        Article not found.
+      </div>
+    `;
+    return;
+  }
+
+  const { data, error } = await supabaseClient
+    .from("articles")
+    .select("title, description, content")
+    .eq("slug", slug)
+    .single();
+
+  if (error || !data) {
+    articleBox.innerHTML = `
+      <div class="message">
+        Article not found.
+      </div>
+    `;
+    console.error(error);
+    return;
+  }
+
+  document.title = "CIBUS LORE — " + data.title;
+
+  articleBox.innerHTML = `
+    <div class="tag">FOOD STORY</div>
+
+    <h1>${data.title}</h1>
+
+    <div class="description">
+      ${data.description}
+    </div>
+
+    <div class="content">
+      ${data.content}
+    </div>
+
+    <a class="back" href="index.html">
+      ← Back to CIBUS LORE
+    </a>
+  `;
+}
+
+loadArticle();
+
+</script>
+
+</body>
+</html>
