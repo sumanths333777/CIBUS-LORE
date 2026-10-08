@@ -1537,8 +1537,13 @@ async function loadLatestArticle() {
     .single();
 
   if (error) {
-    console.error("Could not load article:", error);
-    return;
+
+     document.getElementByid("latest-descripti
+     on").textContent =
+      "ERROR:" + error.message;
+    console.error("Could not load article:", 
+    error);
+     return;
   }
 
   document.getElementById("latest-title").textContent = data.title;
