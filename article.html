@@ -112,54 +112,65 @@ async function loadArticle() {
   const articleBox = document.getElementById("article");
 
   if (!slug) {
-    articleBox.textContent = "Article not found. Please check the article link.";
+    articleBox.textContent = "Article link is missing its slug.";
     return;
   }
 
   articleBox.textContent = "Loading article...";
 
-  const { data, error } = await supabaseClient
-    .from("articles")
-    .select("title, description, content, slug")
-    .eq("slug", slug)
-    .single();
+  try {
+    const request = supabaseClient
+      .from("articles")
+      .select("title, description, content, slug")
+      .eq("slug", slug)
+      .single();
 
-  if (error || !data) {
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error("timeout")), 10000)
+    );
+
+    const { data, error } = await Promise.race([request, timeout]);
+
+    if (error || !data) {
+      articleBox.textContent =
+        "Could not load the article. Please refresh and try again.";
+      console.error("Supabase article error:", error);
+      return;
+    }
+
+    document.title = "CIBUS LORE — " + data.title;
+
+    const tag = document.createElement("div");
+    tag.className = "tag";
+    tag.textContent = "FOOD STORY";
+
+    const title = document.createElement("h1");
+    title.textContent = data.title || "";
+
+    const description = document.createElement("div");
+    description.className = "description";
+    description.textContent = data.description || "";
+
+    const content = document.createElement("div");
+    content.className = "content";
+    content.textContent = data.content || "";
+
+    const back = document.createElement("a");
+    back.className = "back";
+    back.href = "index.html";
+    back.textContent = "← Back to CIBUS LORE";
+
+    articleBox.replaceChildren(tag, title, description, content, back);
+
+  } catch (err) {
     articleBox.textContent =
-      error?.code === "PGRST116"
-        ? "Article not found."
-        : "Unable to load this article. Please try again later.";
-
-    console.error("Article loading error:", error);
-    return;
+      "The article is taking too long to load. Check your connection and try again.";
+    console.error("Article loading failed:", err);
   }
-
-  document.title = "CIBUS LORE — " + data.title;
-
-  const tag = document.createElement("div");
-  tag.className = "tag";
-  tag.textContent = "FOOD STORY";
-
-  const title = document.createElement("h1");
-  title.textContent = data.title || "";
-
-  const description = document.createElement("div");
-  description.className = "description";
-  description.textContent = data.description || "";
-
-  const content = document.createElement("div");
-  content.className = "content";
-  content.textContent = data.content || "";
-
-  const back = document.createElement("a");
-  back.className = "back";
-  back.href = "index.html";
-  back.textContent = "← Back to CIBUS LORE";
-
-  articleBox.replaceChildren(tag, title, description, content, back);
 }
 
 loadArticle();
+  
 </script>
 </body>
 </html>
