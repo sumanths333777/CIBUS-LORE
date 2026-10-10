@@ -132,6 +132,9 @@ async function loadArticle() {
     );
 
     const { data, error } = await Promise.race([request, timeout]);
+    
+    console.log("Article data:", data);
+console.log("Article error:", error);
 
     if (error || !data) {
       articleBox.textContent =
@@ -164,11 +167,9 @@ async function loadArticle() {
 
     articleBox.replaceChildren(tag, title, description, content, back);
 
-  } catch (err) {
-    articleBox.textContent =
-      "The article is taking too long to load. Check your connection and try again.";
-    console.error("Article loading failed:", err);
-  }
+} catch (err) {
+  articleBox.textContent = "Error: " + err.message;
+  console.error("Article loading failed:", err);
 }
 
 loadArticle();
