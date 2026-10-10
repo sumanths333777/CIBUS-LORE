@@ -98,76 +98,68 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+const SUPABASE_URL = "https://ssyxewjbeuldapinvomt.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_37_Z0Y95PSX6xMIcDzq2Tw_RF_BjtqP";
 
-const SUPABASE_URL = "https://ssyxewjbeuldapinovmt.supabase.co";
-
-const SUPABASE_ANON_KEY ="sb_publishable_37_Z0Y95PSX6xMIcDzq2Tw_RF_BjtqP";
-
-  
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_ANON_KEY
 );
 
-
 async function loadArticle() {
-
   const params = new URLSearchParams(window.location.search);
-
   const slug = params.get("slug");
-
   const articleBox = document.getElementById("article");
 
   if (!slug) {
-    articleBox.innerHTML = `
-      <div class="message">
-        Article not found.
-      </div>
-    `;
+    articleBox.textContent = "Article not found. Please check the article link.";
     return;
   }
 
+  articleBox.textContent = "Loading article...";
+
   const { data, error } = await supabaseClient
     .from("articles")
-    .select("title, description, content")
+    .select("title, description, content, slug")
     .eq("slug", slug)
     .single();
 
-if (error || !data) {
-  articleBox.innerHTML = `
-    <div class="message">
-      Article error: ${error ? error.message : "No article found"}
-    </div>
-  `;
-  console.error(error);
-  return;
-}
+  if (error || !data) {
+    articleBox.textContent =
+      error?.code === "PGRST116"
+        ? "Article not found."
+        : "Unable to load this article. Please try again later.";
 
-  
+    console.error("Article loading error:", error);
+    return;
+  }
+
   document.title = "CIBUS LORE — " + data.title;
 
-  articleBox.innerHTML = `
-    <div class="tag">FOOD STORY</div>
+  const tag = document.createElement("div");
+  tag.className = "tag";
+  tag.textContent = "FOOD STORY";
 
-    <h1>${data.title}</h1>
+  const title = document.createElement("h1");
+  title.textContent = data.title || "";
 
-    <div class="description">
-      ${data.description}
-    </div>
+  const description = document.createElement("div");
+  description.className = "description";
+  description.textContent = data.description || "";
 
-    <div class="content">
-      ${data.content}
-    </div>
+  const content = document.createElement("div");
+  content.className = "content";
+  content.textContent = data.content || "";
 
-    <a class="back" href="index.html">
-      ← Back to CIBUS LORE
-    </a>
-  `;
+  const back = document.createElement("a");
+  back.className = "back";
+  back.href = "index.html";
+  back.textContent = "← Back to CIBUS LORE";
+
+  articleBox.replaceChildren(tag, title, description, content, back);
 }
 
 loadArticle();
-
 </script>
-
 </body>
 </html>
