@@ -123,7 +123,7 @@ async function loadArticle() {
       .from("articles")
       .select("title, description, content, slug")
       .eq("slug", slug)
-      .order("created_at"{ ascending: false})
+      .order("created_at" { ascending: false})
       .limit(1)
       .maybeSingle();
 
