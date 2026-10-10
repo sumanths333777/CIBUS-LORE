@@ -118,52 +118,9 @@
     }
 
     .article-reading {
-      display: grid;
-      grid-template-columns: 235px minmax(0, 1fr);
-      gap: clamp(28px, 5vw, 58px);
-      align-items: start;
+      min-width: 0;
       border-top: 1px solid var(--line);
       padding-top: 32px;
-    }
-
-    .toc {
-      position: sticky;
-      top: 100px;
-      padding: 22px 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.72);
-      font-family: Arial, sans-serif;
-    }
-
-    .toc h2 {
-      margin: 0 0 14px;
-      color: var(--ink);
-      font-size: 14px;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-    }
-
-    .toc ol {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .toc li {
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .toc a {
-      color: var(--body);
-      text-decoration: none;
-    }
-
-    .toc a:hover {
-      color: #4f9840;
-      text-decoration: underline;
     }
 
     .content {
@@ -247,18 +204,7 @@
       }
 
       .article-reading {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 24px;
         padding-top: 24px;
-      }
-
-      .toc {
-        position: static;
-        padding: 18px;
-      }
-
-      .toc ol {
-        columns: 1;
       }
 
       .content {
@@ -366,15 +312,12 @@
         const reading = document.createElement("div");
         reading.className = "article-reading";
 
-  
-
         const content = document.createElement("div");
         content.className = "content";
 
         // Preserve article text and format it into readable paragraphs and headings.
         const rawContent = data.content || "";
         const lines = rawContent.split(/\r?\n/);
-        const headingItems = [];
         let paragraphLines = [];
 
         function flushParagraph() {
@@ -397,12 +340,7 @@
           );
 
           heading.textContent = text;
-
-          const id = "section-" + (headingItems.length + 1);
-          heading.id = id;
-
           content.appendChild(heading);
-          headingItems.push({ text, id });
         }
 
         for (const rawLine of lines) {
@@ -435,24 +373,7 @@
 
         flushParagraph();
 
-        if (headingItems.length) {
-          headingItems.forEach(item => {
-            const li = document.createElement("li");
-            const link = document.createElement("a");
-
-            link.href = "#" + item.id;
-            link.textContent = item.text;
-
-            li.appendChild(link);
-            tocList.appendChild(li);
-          });
-        } else {
-          const li = document.createElement("li");
-          li.textContent = "No sections available";
-          tocList.appendChild(li);
-        }
-
-        reading.append(toc, content);
+        reading.appendChild(content);
 
         const back = document.createElement("a");
         back.className = "back";
