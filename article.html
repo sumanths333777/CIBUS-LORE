@@ -3,177 +3,482 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>CIBUS LORE — Article</title>
 
   <style>
+    :root {
+      --paper: #f8f6ee;
+      --white: #ffffff;
+      --ink: #26352b;
+      --body: #37443b;
+      --muted: #68736b;
+      --green: #65b94d;
+      --line: #e7e8df;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
     body {
       margin: 0;
-      background: #f8f6ee;
-      color: #26352b;
-      font-family: Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     header {
-      background: white;
-      border-bottom: 1px solid #eee;
-      padding: 25px 45px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px clamp(20px, 5vw, 72px);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
     }
 
     .logo {
-      font-size: 32px;
-      color: #26352b;
+      color: var(--ink);
+      font-size: clamp(25px, 3vw, 34px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .header-back {
+      color: var(--muted);
+      font: 700 14px/1.4 Arial, sans-serif;
       text-decoration: none;
     }
 
+    .header-back:hover,
+    .back:hover {
+      color: var(--green);
+    }
+
     main {
-      max-width: 900px;
-      margin: 70px auto;
-      padding: 0 25px;
+      width: min(100% - 40px, 1020px);
+      margin: 42px auto 80px;
+    }
+
+    .article-layout {
+      min-width: 0;
+    }
+
+    .article-hero {
+      margin-bottom: 34px;
+    }
+
+    .cover {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 18px;
+      background: #e9e8dd;
+      margin-bottom: 30px;
     }
 
     .tag {
-      color: #65b94d;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #4f9840;
+      font: 700 12px/1.4 Arial, sans-serif;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 52px;
-      line-height: 1.1;
-      margin: 18px 0;
+      max-width: 900px;
+      margin: 8px 0 18px;
+      color: var(--ink);
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -1.3px;
+      overflow-wrap: anywhere;
     }
 
     .description {
-      font-size: 21px;
-      color: #68736b;
-      line-height: 1.6;
-      margin-bottom: 45px;
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2.5vw, 23px);
+      line-height: 1.65;
+    }
+
+    .article-reading {
+      display: grid;
+      grid-template-columns: 235px minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 58px);
+      align-items: start;
+      border-top: 1px solid var(--line);
+      padding-top: 32px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 100px;
+      padding: 22px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.72);
+      font-family: Arial, sans-serif;
+    }
+
+    .toc h2 {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-size: 14px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .toc li {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .toc a {
+      color: var(--body);
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      color: #4f9840;
+      text-decoration: underline;
     }
 
     .content {
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.9;
-      color: #37443b;
-      white-space: pre-wrap;
+      min-width: 0;
+      color: var(--body);
+      font: 17px/1.9 Arial, Helvetica, sans-serif;
+      overflow-wrap: anywhere;
+    }
+
+    .content p {
+      margin: 0 0 1.45em;
+    }
+
+    .content h2 {
+      margin: 1.8em 0 0.55em;
+      color: var(--ink);
+      font: 700 clamp(23px, 3vw, 30px)/1.3 Georgia, "Times New Roman", serif;
+      scroll-margin-top: 100px;
+    }
+
+    .content h3 {
+      margin: 1.6em 0 0.5em;
+      color: var(--ink);
+      font: 700 21px/1.4 Georgia, "Times New Roman", serif;
+      scroll-margin-top: 100px;
+    }
+
+    .content ul,
+    .content ol {
+      padding-left: 1.5em;
+      margin: 0 0 1.5em;
+    }
+
+    .content li {
+      margin-bottom: 0.5em;
+    }
+
+    .content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .content a {
+      color: #4f9840;
     }
 
     .back {
       display: inline-block;
-      margin-top: 50px;
-      color: #65b94d;
+      margin-top: 42px;
+      color: #4f9840;
+      font: 700 15px/1.5 Arial, sans-serif;
       text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
     }
 
     .message {
+      padding: 70px 20px;
       text-align: center;
-      font-family: Arial, sans-serif;
-      color: #68736b;
+      color: var(--muted);
+      font: 16px/1.7 Arial, sans-serif;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding: 17px 20px;
+      }
+
+      .header-back {
+        font-size: 12px;
+      }
+
+      main {
+        width: min(100% - 32px, 650px);
+        margin: 25px auto 54px;
+      }
+
+      .cover {
+        aspect-ratio: 4 / 3;
+        border-radius: 13px;
+        margin-bottom: 24px;
+      }
+
+      .article-reading {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding-top: 24px;
+      }
+
+      .toc {
+        position: static;
+        padding: 18px;
+      }
+
+      .toc ol {
+        columns: 1;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .article-hero {
+        margin-bottom: 26px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .logo {
+        font-size: 23px;
+      }
+
+      .header-back {
+        max-width: 105px;
+        text-align: right;
+      }
+
+      h1 {
+        letter-spacing: -0.7px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <a href="index.html" class="logo">CIBUS LORE</a>
+    <a href="index.html" class="header-back">← Back to stories</a>
+  </header>
 
-<header>
-  <a href="index.html" class="logo">CIBUS LORE</a>
-</header>
+  <main>
+    <div id="article">
+      <div class="message">Loading article...</div>
+    </div>
+  </main>
 
-<main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-  <div id="article">
-    <div class="message">Loading article...</div>
-  </div>
+  <script>
+    const SUPABASE_URL = "https://ssyxewjbeuldapinvomt.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_37_Z0Y95PSX6xMIcDzq2Tw_RF_BjtqP";
 
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-const SUPABASE_URL = "https://ssyxewjbeuldapinvomt.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_37_Z0Y95PSX6xMIcDzq2Tw_RF_BjtqP";
-
-const supabaseClient = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
-
-async function loadArticle() {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
-  const articleBox = document.getElementById("article");
-
-  if (!slug) {
-    articleBox.textContent = "Article link is missing its slug.";
-    return;
-  }
-
-  articleBox.textContent = "Loading article...";
-
-  try {
-    const request = supabaseClient
-      .from("articles")
-      .select("title, description, content, slug")
-      .eq("slug", slug)
-      .order("created_at", { ascending: false})
-      .limit(1)
-      .maybeSingle();
-
-    const timeout = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("timeout")), 10000)
+    const supabaseClient = supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_ANON_KEY
     );
 
-    const { data, error } = await Promise.race([request, timeout]);
-    
-    console.log("Article data:", data);
-console.log("Article error:", error);
+    async function loadArticle() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("slug");
+      const articleBox = document.getElementById("article");
 
-    if (error || !data) {
-      articleBox.textContent =
-        "Could not load the article. Please refresh and try again.";
-      console.error("Supabase article error:", error);
-      return;
+      if (!slug) {
+        articleBox.innerHTML =
+          '<div class="message">This article link is missing its slug.<br><a class="back" href="index.html">← Back to CIBUS LORE</a></div>';
+        return;
+      }
+
+      articleBox.innerHTML =
+        '<div class="message">Loading article...</div>';
+
+      try {
+        const { data, error } = await supabaseClient
+          .from("articles")
+          .select("title, description, content, slug")
+          .eq("slug", slug)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+
+        if (error || !data) {
+          console.error("Supabase article error:", error);
+
+          articleBox.innerHTML =
+            '<div class="message">We couldn’t retrieve this story. Please try again shortly.<br><a class="back" href="javascript:location.reload()">Try again</a><br><a class="back" href="index.html">← Back to CIBUS LORE</a></div>';
+          return;
+        }
+
+        document.title = "CIBUS LORE — " + (data.title || "Article");
+
+        const layout = document.createElement("article");
+        layout.className = "article-layout";
+
+        const hero = document.createElement("section");
+        hero.className = "article-hero";
+
+        const tag = document.createElement("div");
+        tag.className = "tag";
+        tag.textContent = "Food story";
+
+        const title = document.createElement("h1");
+        title.textContent = data.title || "";
+
+        const description = document.createElement("p");
+        description.className = "description";
+        description.textContent = data.description || "";
+
+        hero.append(tag, title, description);
+
+        const reading = document.createElement("div");
+        reading.className = "article-reading";
+
+        const toc = document.createElement("nav");
+        toc.className = "toc";
+        toc.setAttribute("aria-label", "Table of contents");
+
+        const tocTitle = document.createElement("h2");
+        tocTitle.textContent = "In this story";
+
+        const tocList = document.createElement("ol");
+        toc.append(tocTitle, tocList);
+
+        const content = document.createElement("div");
+        content.className = "content";
+
+        // Preserve article text and format it into readable paragraphs and headings.
+        const rawContent = data.content || "";
+        const lines = rawContent.split(/\r?\n/);
+        const headingItems = [];
+        let paragraphLines = [];
+
+        function flushParagraph() {
+          const text = paragraphLines.join(" ").trim();
+
+          if (text) {
+            const p = document.createElement("p");
+            p.textContent = text;
+            content.appendChild(p);
+          }
+
+          paragraphLines = [];
+        }
+
+        function addHeading(text, level) {
+          flushParagraph();
+
+          const heading = document.createElement(
+            level === 3 ? "h3" : "h2"
+          );
+
+          heading.textContent = text;
+
+          const id = "section-" + (headingItems.length + 1);
+          heading.id = id;
+
+          content.appendChild(heading);
+          headingItems.push({ text, id });
+        }
+
+        for (const rawLine of lines) {
+          const line = rawLine.trim();
+
+          if (!line) {
+            flushParagraph();
+            continue;
+          }
+
+          const markdownHeading = line.match(/^#{1,3}\s+(.+)$/);
+          const numberedHeading = line.match(/^(?:🌱\s*)?\d+[.)]\s+(.+)$/);
+          const emojiHeading = line.match(
+            /^(?:🌱|🍎|🚚|🛒|❄️|🥗|♻️|📦|🌍|💰|🧺|🔬)\s+(.+)$/
+          );
+
+          if (markdownHeading) {
+            addHeading(
+              markdownHeading[1],
+              line.startsWith("###") ? 3 : 2
+            );
+          } else if (numberedHeading) {
+            addHeading(line, 2);
+          } else if (emojiHeading) {
+            addHeading(line, 2);
+          } else {
+            paragraphLines.push(line);
+          }
+        }
+
+        flushParagraph();
+
+        if (headingItems.length) {
+          headingItems.forEach(item => {
+            const li = document.createElement("li");
+            const link = document.createElement("a");
+
+            link.href = "#" + item.id;
+            link.textContent = item.text;
+
+            li.appendChild(link);
+            tocList.appendChild(li);
+          });
+        } else {
+          const li = document.createElement("li");
+          li.textContent = "No sections available";
+          tocList.appendChild(li);
+        }
+
+        reading.append(toc, content);
+
+        const back = document.createElement("a");
+        back.className = "back";
+        back.href = "index.html";
+        back.textContent = "← Back to CIBUS LORE";
+
+        layout.append(hero, reading, back);
+        articleBox.replaceChildren(layout);
+
+      } catch (err) {
+        console.error("Article loading failed:", err);
+
+        articleBox.innerHTML =
+          '<div class="message">We couldn’t retrieve this story. Please try again shortly.<br><a class="back" href="javascript:location.reload()">Try again</a><br><a class="back" href="index.html">← Back to CIBUS LORE</a></div>';
+      }
     }
 
-    document.title = "CIBUS LORE — " + data.title;
-
-    const tag = document.createElement("div");
-    tag.className = "tag";
-    tag.textContent = "FOOD STORY";
-
-    const title = document.createElement("h1");
-    title.textContent = data.title || "";
-
-    const description = document.createElement("div");
-    description.className = "description";
-    description.textContent = data.description || "";
-
-    const content = document.createElement("div");
-    content.className = "content";
-    content.textContent = data.content || "";
-
-    const back = document.createElement("a");
-    back.className = "back";
-    back.href = "index.html";
-    back.textContent = "← Back to CIBUS LORE";
-
-    articleBox.replaceChildren(tag, title, description, content, back);
-
-} catch (err) {
-  articleBox.textContent = "Error: " + err.message;
-  console.error("Article loading failed:", err);
-  }
-}
-
-loadArticle();
-</script>
+    loadArticle();
+  </script>
 </body>
 </html>
